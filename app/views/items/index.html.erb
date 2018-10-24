@@ -12,9 +12,8 @@
     <a href='<%= item_path(item) %>'><b><%= item.name %></b></a>
     <p>Description: <%= item.description %></p>
     <p>Price: <%= item.price %></p>
-    <p>We have <%= item.inventory %> in stock<p>
-    <p> <%= item.thumbnail %><p>
-    <p><i>Author(s):</i></p>
+    <p>We have <%= item.inventory %> in stock</p>
+    <img src=item.thumbnail alt="Thumbnail">
 	</div>
 <% end %>
 </div>
