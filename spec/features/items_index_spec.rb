@@ -9,6 +9,5 @@ describe 'user sees items page' do
     expect(page).to have_content("Item")
     expect(page).to have_content(item_1.name)
     expect(page).to have_content(item_2.name)
-
   end
 end
