@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  validates_presence_of :first_name, :last_name, :street_address, :password, :role, :city, :zip
+  validates_presence_of :first_name, :last_name, :street_address, :role, :city, :zip
+  validates_presence_of :password, require: true
 
   has_many :order_items
   has_many :orders, through: :order_items
@@ -8,6 +9,4 @@ class User < ApplicationRecord
   validates :email_address, presence: true, uniqueness: true
 
   has_secure_password
-
-  enum role: %w(default admin)
 end

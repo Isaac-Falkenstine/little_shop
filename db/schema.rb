@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 20181024031631) do
   create_table "orders", force: :cascade do |t|
     t.integer "user_id"
     t.integer "total"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "states", force: :cascade do |t|
@@ -59,7 +61,7 @@ ActiveRecord::Schema.define(version: 20181024031631) do
     t.string "last_name"
     t.string "street_address"
     t.string "email_address"
-    t.string "password"
+    t.string "password_digest"
     t.string "role"
     t.string "city"
     t.integer "zip"

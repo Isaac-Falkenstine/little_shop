@@ -11,34 +11,37 @@
     <%= javascript_include_tag 'application' %>
   </head>
   <body>
+  <div class="container">
   <nav class="navbar navbar-inverse navbar-static-top">
-  	<div class="container">
-  		<div class="navbar-header">
-  			<a class="navbar-brand" href='/'>HOME</a>
-        <a class="navbar-brand" href="#">Items for Sale</a>
-        <a class="navbar-brand" href="#">Merchants</a><br />
-  		</div>
-  		<div class="container">
-  			<ul class="nav navbar-nav navbar-right">
-  				<li><a href="#">Cart</a></li>
-  				<li class="dropdown">
-  					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login<span class="caret"></span></a>
-  					<ul class="dropdown-menu">
-  						<li><a href="#">User</a></li>
-  						<li><a href="#">Merchant</a></li>
-  						<li><a href="#">Admin</a></li>
-  					</ul>
-  				</li>
-  				<li><a href="#">Register</a></li>
-  				<li><a href="#">About</a></li>
-  			</ul>
-  		</div>
-      <div class="container-fluid-nav title">
-        <h1>The Pub Shop</h1><div class="supertitle">  a little shop of choice victuals</div>
-      </div>
+  <div class="col-md-2">
+        <ul><a href='/'>Home</a></ul>
+        <ul><a href="#">Items for Sale</a></ul>
+        <ul><a href="#">Merchants</a></ul>
+  </div>
+  <div class="col-md-8">
+    <div class="container-fluid-nav title">
+      <h1>The Pub Shop</h1><div class="supertitle">  a little shop of choice victuals</div>
     </div>
+  </div>
+  <div class="col-md-2">
+		<ul><a href="#">Items in Cart:</a></ul>
+    <% if session[:user_id].nil? %>
+		<ul><a href= <%= new_user_path %> >Register</a></ul>
+    <ul class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login<span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <ul><a href="#">User</a></ul>
+        <ul><a href="#">Merchant</a></ul>
+        <ul><a href="#">Admin</a></ul>
+      </ul>
+    </ul>
+    <% end %>
   </nav>
+  </div>
+</div>
+<div class="container">
   <%= yield %>
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
