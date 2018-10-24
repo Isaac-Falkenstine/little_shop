@@ -11,9 +11,9 @@ def prepare_item_1
   name = Faker::Beer.brand
   description = Faker::Beer.style
   price = Faker::Number.between(2,100)
-  count = Faker::Number.between(2,100)
+  inventory = Faker::Number.between(2,100)
   thumbnail = https://food.fnr.sndimg.com/content/dam/images/food/fullset/2015/11/20/0/fnd_beer-istock.jpg.rend.hgtvcom.616.462.suffix/1448031613421.jpeg
-  @item_hash_1 = {name: name, description: description, price: price, count: count, thumbnail: thumbnail}
+  @item_hash_1 = {name: name, description: description, price: price, inventory: inventory, thumbnail: thumbnail}
 end
 
 def prepare_item_2
@@ -22,31 +22,15 @@ def prepare_item_2
   price = Faker::Number.between(2,100)
   inventory = Faker::Number.between(2,100)
   thumbnail = https://amp.businessinsider.com/images/5a7dc169d03072af008b4bf2-750-562.jpg
-  @item_hash_2 = {name: name, description: description, price: price, count: count, thumbnail: thumbnail}
+  @item_hash_2 = {name: name, description: description, price: price, inventory: inventory, thumbnail: thumbnail}
 end
 
-5.times do
+8.times do
   prepare_item_1
   Item.create(@item_hash_1)
 end
 
-5.times do
+8.times do
   prepare_item_2
   Item.create(@item_hash_2)
 end
-
-
-# def prepare
-#   title = Faker::Book.title
-#   pages = Faker::Number.between(100,1000)
-#   year = Faker::Number.between(1918,2018)
-#   @hash = {title: title, pages: pages, year: year}
-# end
-#
-#
-# def review_book(book)
-#   title = Faker::Hipster.sentence(4)
-#   body = Faker::Hipster.paragraph(2)
-#   rating = Faker::Number.between(1,5)
-#   new_review = book.reviews.create(title: title, body: body, rating: rating, user_id: create_user.id)
-# end
