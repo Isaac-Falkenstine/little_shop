@@ -4,36 +4,42 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Authenticate</title>
+    <title>Pub Shop</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
   <body>
-    <nav class="navbar navbar-inverse navbar-static-top">
-    	<div class="container">
-    		<div class="navbar-header">
-    			<a class="navbar-brand" href="#">HOME</a>
-    		</div>
-    		<div class="container">
-    			<ul class="nav navbar-nav navbar-right">
-    				<li><a href="#">Thing</a></li>
-    				<li class="dropdown">
-    					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras<span class="caret"></span></a>
-    					<ul class="dropdown-menu">
-    						<li><a href="#">First</a></li>
-    						<li><a href="#">Second</a></li>
-    						<li><a href="#">Third</a></li>
-    					</ul>
-    				</li>
-    				<li><a href="#">About</a></li>
-    			</ul>
-    		</div>
-    	</div>
-    </nav>
+  <nav class="navbar navbar-inverse navbar-static-top">
+  	<div class="container">
+  		<div class="navbar-header">
+  			<a class="navbar-brand" href='/'>HOME</a>
+        <a class="navbar-brand" href="#">Items for Sale</a>
+        <a class="navbar-brand" href="#">Merchants</a><br />
+  		</div>
+  		<div class="container">
+  			<ul class="nav navbar-nav navbar-right">
+  				<li><a href="#">Cart</a></li>
+  				<li class="dropdown">
+  					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login<span class="caret"></span></a>
+  					<ul class="dropdown-menu">
+  						<li><a href="#">User</a></li>
+  						<li><a href="#">Merchant</a></li>
+  						<li><a href="#">Admin</a></li>
+  					</ul>
+  				</li>
+  				<li><a href="#">Register</a></li>
+  				<li><a href="#">About</a></li>
+  			</ul>
+  		</div>
+      <div class="container-fluid-nav title">
+        <h1>The Pub Shop</h1><div class="supertitle">  a little shop of choice victuals</div>
+      </div>
+    </div>
+  </nav>
   <%= yield %>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
