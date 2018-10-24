@@ -14,9 +14,17 @@
  *= require_self
  */
 
- .navbar { margin-bottom: 0;}
+.navbar { margin-bottom: 0; font-family: fantasy;}
 
- .jumbotron {padding:20px 0 5px 0;
+.jumbotron {padding:20px 0 5px 0;
  	           margin-top: 0;
  	           margin-bottom: 0;
-             color: black;}
+             color: black;
+             font-family: fantasy;}
+
+.title { display: flex;
+        justify-content: center;
+        color: white; font-family: fantasy;}
+
+.supertitle { color: blue;
+              font-family: fantasy;}

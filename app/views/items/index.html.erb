@@ -1,9 +1,19 @@
-<h1>All Items</h1>
-
+<div class="jumbotron">
+   <div class="container">
+    <h1>Items For Sale</h1>
+    <p>Expect more bitchin' information here.</p>
+    <br>
+    <p><a class="btn btn-primary btn-lg" href="#" role="button">Do Someting »</a> <a class="btn btn-primary btn-lg" href="#" role="button">Do Another Thing »</a></p>
+   </div>
+</div>
+<div class="row">
 <% @items.each do |item| %>
- <%=item.name %>
- <%=item.description %>
- <%=item.price %>
- <%=item.inventory %>
- <%=item.thumbnail %>
+	<div class="col-md-2">
+    <a href='<%= item_path(item) %>'><b><%= item.name %></b></a>
+    <p>Description: <%= item.description %></p>
+    <p>Price: <%= item.price %></p>
+    <p>We have <%= item.inventory %> in stock</p>
+    <img src=item.thumbnail alt="Thumbnail">
+	</div>
 <% end %>
+</div>

@@ -8,11 +8,11 @@
 require 'faker'
 
 def prepare_item_1
-  name = Faker::Beer.brand
+  name = Faker::Beer.name
   description = Faker::Beer.style
   price = Faker::Number.between(2,100)
   inventory = Faker::Number.between(2,100)
-  thumbnail = https://food.fnr.sndimg.com/content/dam/images/food/fullset/2015/11/20/0/fnd_beer-istock.jpg.rend.hgtvcom.616.462.suffix/1448031613421.jpeg
+  thumbnail = "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2015/11/20/0/fnd_beer-istock.jpg.rend.hgtvcom.616.462.suffix/1448031613421.jpeg"
   @item_hash_1 = {name: name, description: description, price: price, inventory: inventory, thumbnail: thumbnail}
 end
 
@@ -21,7 +21,7 @@ def prepare_item_2
   description = Faker::Food.description
   price = Faker::Number.between(2,100)
   inventory = Faker::Number.between(2,100)
-  thumbnail = https://amp.businessinsider.com/images/5a7dc169d03072af008b4bf2-750-562.jpg
+  thumbnail = "https://amp.businessinsider.com/images/5a7dc169d03072af008b4bf2-750-562.jpg"
   @item_hash_2 = {name: name, description: description, price: price, inventory: inventory, thumbnail: thumbnail}
 end
 
