@@ -10,13 +10,10 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+
+
  */
 
-.container  { margin-bottom: 0;
-            padding:5px 0 5px 0;
-            font-family: fantasy;}
 
 .navbar    { margin-bottom: 0;
              padding:10px 0 5px 0;
@@ -32,16 +29,9 @@
              justify-content: center;
              color: white; font-family: fantasy;}
 
-.supertitle {color: yellow;
+.supertitle {color: blue;
              font-family: fantasy;}
 
 .thumbnail  {width: 110px;}
 
-.bignail   {width: 180px;
-            height: 180px;
-            background-image: url("santa-beer.jpg");
-            background-size: cover;
-            }
-
-.smallthings {font-size: 1em;
-              padding:0px 0 0px 0;}
+.bignail    {width: 110px;}
