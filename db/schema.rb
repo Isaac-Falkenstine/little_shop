@@ -26,17 +26,14 @@ ActiveRecord::Schema.define(version: 20181024031631) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "locations", force: :cascade do |t|
-    t.string "city"
-    t.integer "state_id"
-    t.integer "zip"
-    t.integer "user_id"
-  end
-
   create_table "order_items", force: :cascade do |t|
     t.integer "item_id"
     t.integer "order_id"
+    t.integer "user_id"
     t.integer "count"
+    t.integer "subtotal"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "orders", force: :cascade do |t|
@@ -47,11 +44,12 @@ ActiveRecord::Schema.define(version: 20181024031631) do
   create_table "states", force: :cascade do |t|
     t.string "name"
     t.string "abbr"
+    t.integer "user_id"
   end
 
-  create_table "user_locations", force: :cascade do |t|
+  create_table "user_states", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "location_id"
+    t.integer "state_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -63,7 +61,9 @@ ActiveRecord::Schema.define(version: 20181024031631) do
     t.string "email_address"
     t.string "password"
     t.string "role"
-    t.integer "location_id"
+    t.string "city"
+    t.integer "zip"
+    t.integer "state_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
