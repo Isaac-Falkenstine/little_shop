@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20181024004651) do
     t.bigint "price"
     t.integer "inventory"
     t.string "description"
-    t.string "enabled"
+    t.boolean "enabled", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20181024004651) do
     t.bigint "item_id"
     t.bigint "order_id"
     t.integer "count"
-    t.integer "price"
+    t.integer "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_order_items_on_item_id"
@@ -45,28 +45,21 @@ ActiveRecord::Schema.define(version: 20181024004651) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
-  create_table "states", force: :cascade do |t|
-    t.string "name"
-    t.string "abbr"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "street_address"
     t.string "email_address"
     t.string "password_digest"
-    t.integer "role", default: 0
     t.string "city"
+    t.string "state"
     t.integer "zip"
-    t.bigint "state_id"
+    t.integer "role", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["state_id"], name: "index_users_on_state_id"
   end
 
   add_foreign_key "order_items", "items"
   add_foreign_key "order_items", "orders"
   add_foreign_key "orders", "users"
-  add_foreign_key "users", "states"
 end

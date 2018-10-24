@@ -605,7 +605,7 @@ Each item in my cart shows the following information:
 - the merchant I'm buying this item from
 - the price of the item
 - my desired quantity of the item
-- a subtotal (price multiplied by quantity)
+- an amount (price multiplied by quantity)
 I also see a grand total of what everything in my cart will cost
 ```
 

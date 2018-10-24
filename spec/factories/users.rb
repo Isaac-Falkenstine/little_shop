@@ -5,9 +5,8 @@ FactoryBot.define do
     sequence(:street_address) {|n| "street_address #{n}"}
     sequence(:email_address) {|n| "email_address #{n}"}
     sequence(:password) {|n| "password #{n}"}
-    sequence(:role) {|n| "role #{n}"}
     sequence(:city) {|n| "city #{n}"}
+    sequence(:state) {|n| "state #{n}"}
     sequence(:zip) {|n| "zip #{n}"}
-    sequence(:state_id) {|n| "state_id #{n}"}
   end
 end
