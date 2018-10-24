@@ -13,5 +13,6 @@ require "rails_helper"
   describe User, type: :model do
     describe 'Relationship' do
       it { should have_many(:orders)}
+      it { should have_many(:locations)}
     end
   end

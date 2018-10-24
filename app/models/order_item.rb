@@ -3,4 +3,3 @@ class OrderItem < ApplicationRecord
   belongs_to :order
   belongs_to :item
 end
-#add relation of order_id, item_id
