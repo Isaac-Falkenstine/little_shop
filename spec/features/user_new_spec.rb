@@ -33,9 +33,10 @@ describe 'user registration' do
     fill_in :user_city, with: 'Denver'
     fill_in :user_zip, with: 123456
     fill_in :user_states, with: 'Colorado'
-
+save_and_open_page
     click_on 'Create User'
-
+    expect(current_path).to eq(user_path(User.last))
+    save_and_open_page
     expect(page).to have_content("Welcome, Isaac Falkenstine")
   end
 end
