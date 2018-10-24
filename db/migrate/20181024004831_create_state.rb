@@ -3,6 +3,7 @@ class CreateState < ActiveRecord::Migration[5.1]
     create_table :states do |t|
       t.string :name
       t.string :abbr
+      t.integer :user_id
     end
   end
 end
