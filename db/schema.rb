@@ -10,5 +10,54 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 20181024004831) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
+  create_table "items", force: :cascade do |t|
+    t.text "name"
+    t.text "thumbnail"
+    t.bigint "price"
+    t.integer "inventory"
+    t.string "description"
+    t.string "enabled"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string "city"
+    t.integer "state_id"
+    t.integer "zip"
+  end
+
+  create_table "order_items", force: :cascade do |t|
+    t.integer "item_id"
+    t.integer "order_id"
+    t.integer "count"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "total"
+  end
+
+  create_table "states", force: :cascade do |t|
+    t.string "name"
+    t.string "abbr"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "street_address"
+    t.string "email_address"
+    t.string "password"
+    t.string "role"
+    t.integer "location_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+end
