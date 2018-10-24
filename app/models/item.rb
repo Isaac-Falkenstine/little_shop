@@ -1,6 +1,5 @@
 class Item < ApplicationRecord
-  validates_presence_of :name
+  validates_presence_of :name, :thumbnail, :price, :inventory, :description
 
-  has_many :cart_items
-  has_many :carts, through: :cart_items
+  
 end
