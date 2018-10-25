@@ -15,7 +15,7 @@
   <nav class="navbar navbar-inverse navbar-static-top">
   <div class="col-md-2">
         <ul><a href='/'>Home</a></ul>
-        <ul><a href="#">Items for Sale</a></ul>
+        <ul><a href= <%= items_path %> >Items for Sale</a></ul>
         <ul><a href="#">Merchants</a></ul>
   </div>
   <div class="col-md-8">
@@ -26,7 +26,7 @@
   <div class="col-md-2">
 		<ul><a href="#">Items in Cart:</a></ul>
     <% if session[:user_id].nil? %>
-		<ul><a href="#">Register</a></ul>
+		<ul><a href= <%= new_user_path %> >Register</a></ul>
     <ul class="dropdown">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login<span class="caret"></span></a>
       <ul class="dropdown-menu">

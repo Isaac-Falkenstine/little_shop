@@ -1,10 +1,12 @@
 class User < ApplicationRecord
-  validates_presence_of :first_name, :last_name, :street_address, :email_address, :password, :role, :city, :zip
+  validates_presence_of :first_name, :last_name, :street_address, :city, :zip, :state
+  validates_presence_of :password, require: true
+  validates :email_address, presence: true, uniqueness: true
 
-  has_many :order_items
-  has_many :orders, through: :order_items
-  has_many :user_states
-  has_many :states, through: :user_states
+  has_many :orders
+
 
   has_secure_password
+
+  enum role: [:default, :merchant, :admin]
 end

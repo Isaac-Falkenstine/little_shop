@@ -1,11 +1,10 @@
 class CreateOrderItems < ActiveRecord::Migration[5.1]
   def change
     create_table :order_items do |t|
-      t.integer :item_id
-      t.integer :order_id
-      t.integer :user_id
+      t.references :item, foreign_key: true
+      t.references :order, foreign_key: true
       t.integer  :count
-      t.integer :subtotal
+      t.integer :amount
       t.timestamps
     end
   end

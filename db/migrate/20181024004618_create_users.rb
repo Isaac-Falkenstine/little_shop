@@ -6,10 +6,10 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :street_address
       t.string :email_address
       t.string :password_digest
-      t.string :role
       t.string :city
+      t.string :state
       t.integer :zip
-      t.integer :state_id
+      t.integer :role, default: 0
 
       t.timestamps
     end
