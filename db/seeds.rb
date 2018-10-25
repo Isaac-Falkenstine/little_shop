@@ -35,4 +35,11 @@ end
   Item.create(@item_hash_2)
 end
 
-# User.create(first_name: "Jimmy", last_name: "Smith", )
+reg_user = User.create(first_name: "Regular", last_name: "User", street_address: "1234 Normal St.",
+                       city: "Lone Tree", state: "Colorado", zip: 81234, email_address: "regular@email.com", password: "pass123")
+
+merch_user = User.create(first_name: "Merchant", last_name: "User", street_address: "1234 Sales St.",
+                      city: "Lone Tree", state: "Colorado", zip: 81234, email_address: "merchant@email.com", password: "pass123", role: 1)
+
+admin_user = User.create(first_name: "Admin", last_name: "User", street_address: "1234 Boss St.",
+                       city: "Lone Tree", state: "Colorado", zip: 81234, email_address: "admin@email.com", password: "pass123", role: 2)
