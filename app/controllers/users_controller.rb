@@ -11,6 +11,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
+      flash[:success] = "Welcome #{@user.first_name} to the Pubshop App!"
+
       redirect_to user_path(@user)
     else
       render :new
