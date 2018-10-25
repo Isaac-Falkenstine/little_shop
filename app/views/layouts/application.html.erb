@@ -27,9 +27,12 @@
     <% if session[:user_id].nil? %>
 		<ul><a href= <%= login_path %> >Login</a></ul>
 		<ul><a href= <%= new_user_path %> >Register</a></ul>
+    <% else  %>  
+      <ul><%= link_to 'Logout', logout_path(@user.id), method: :delete %></p></ul>
     <% end %>
     <ul ><a href= <%= items_path %> >Cart Items: </a><b class="boxed">0</b></ul>
   </nav>
+
   </div>
 </div>
 <div class="container">

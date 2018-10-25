@@ -13,6 +13,5 @@ Rails.application.routes.draw do
 
   resources :welcome, only: [:index]
   resources :items
-  resources :users
-
+  resources :users, except: [:destroy]
 end
