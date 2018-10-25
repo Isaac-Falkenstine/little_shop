@@ -60,3 +60,9 @@
             background-image: url("welcome_dog.gif");
             background-size: cover;
            }
+
+.beer_regi   { width: 350px;
+            height: 350px;
+            background-image: url("beer_regi.jpg");
+            background-size: cover;
+           }
