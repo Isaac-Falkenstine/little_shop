@@ -4,7 +4,12 @@ Rails.application.routes.draw do
   root "welcome#index"
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
-  delete 
+  delete '/logout', to: 'sessions#destroy'
+  get '/dashboard', to: 'dashboard#show'
+
+  namespace :dashboard do
+    resources :items, only: [:new, :create, :andothershit]
+  end
 
   resources :items
   resources :users

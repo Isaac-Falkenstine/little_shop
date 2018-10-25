@@ -14,9 +14,9 @@
  *= require_self
  */
 
-.container  { margin-bottom: 0;
-            padding:5px 0 5px 0;
-            font-family: fantasy;}
+.container { margin-bottom: 0;
+             padding:5px 0 5px 0;
+             font-family: fantasy;}
 
 .navbar    { margin-bottom: 0;
              padding:10px 0 5px 0;
@@ -35,13 +35,16 @@
 .supertitle {color: yellow;
              font-family: fantasy;}
 
-.thumbnail  {width: 110px;}
+.thumbnail { width: 110px;}
 
-.bignail   {width: 180px;
-            height: 180px;
-            background-image: url("santa-beer.jpg");
-            background-size: cover;
+.bignail   { width: 180px;
+             height: 180px;
+             background-image: url("santa-beer.jpg");
+             background-size: cover;
             }
 
 .smallthings {font-size: 1em;
               padding:0px 0 0px 0;}
+
+.boxed     { border: 1px solid cyan;
+             color: white}
