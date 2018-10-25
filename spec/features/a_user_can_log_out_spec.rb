@@ -19,7 +19,7 @@ feature "a user can log out" do
 
     click_on 'Create User'
     expect(current_path).to eq(user_path(User.last))
-    # expect(page).to have_content("Welcome #{User.last.first_name} to the Pubshop App!")
+    expect(page).to have_content("Welcome #{User.last.first_name} to the Pubshop App!")
     expect(page).to have_content("Welcome, #{User.last.first_name} #{User.last.last_name}")
 
     click_on "Logout"
