@@ -34,3 +34,5 @@ end
   prepare_item_2
   Item.create(@item_hash_2)
 end
+
+# User.create(first_name: "Jimmy", last_name: "Smith", )
