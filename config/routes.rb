@@ -12,6 +12,5 @@ Rails.application.routes.draw do
   end
 
   resources :items
-  resources :users
-
+  resources :users, except: [:destroy]
 end
