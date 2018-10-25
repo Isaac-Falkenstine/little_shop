@@ -1,1 +1,16 @@
-<h1>Welcome, <%= current_user.first_name %>  <%= current_user.last_name %></h1>
+<div class="jumbotron">
+  <div class="container">
+    <div class="col-md-8">
+      <h1>Welcome, <%= @user.first_name %>  <%= @user.last_name %></h1>
+      <p><a class="btn btn-primary btn-lg" href="#" role="button"> Edit your personal info</a></p>
+    </div>
+  </div>
+<div class="row">
+  <h1>Your personal info:</h1>
+  <div class="smallthings">
+  	<div class="col-md-3">
+      Address: <%= @user.street_address %> <%= @user.city %> <%= @user.state %> <%= @user.zip%><br />
+      email: <%= @user.email_address %><br />
+    </div>
+  </div>
+</div>
