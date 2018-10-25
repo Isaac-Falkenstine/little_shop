@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-feature "a user can log out" do 
-  scenario "after when logged in" do 
+feature "a user can log out" do
+  scenario "after when logged in" do
     user = create(:user)
     visit '/'
 
@@ -16,12 +16,11 @@ feature "a user can log out" do
     fill_in :user_city, with: 'Denver'
     fill_in :user_zip, with: 123456
     fill_in :user_state, with: 'Colorado'
-    
+
     click_on 'Create User'
     expect(current_path).to eq(user_path(User.last))
     expect(page).to have_content("Welcome #{User.last.first_name} to the Pubshop App!")
     expect(page).to have_content("Welcome, #{User.last.first_name} #{User.last.last_name}")
-    save_and_open_page
     click_on "Logout"
     expect(current_path).to eq("/")
     expect(page).to have_content("Login")
