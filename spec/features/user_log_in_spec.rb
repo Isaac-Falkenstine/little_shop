@@ -8,7 +8,6 @@ describe 'login process' do
       visit items_path
 
       click_on 'Login'
-      click_on 'User'
 
       expect(current_path).to eq(login_path)
       fill_in :email_address, with: user.email_address
