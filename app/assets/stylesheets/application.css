@@ -48,3 +48,9 @@
 
 .boxed     { border: 1px solid cyan;
              color: white}
+
+.login_beer   { width: 180px;
+            height: 180px;
+            background-image: url("beer_login.jpg");
+            background-size: cover;
+           }

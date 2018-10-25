@@ -1,8 +1,18 @@
-<%= form_tag login_path do %>
-  <%= label_tag :email %>
-  <%= text_field_tag :email_address %>
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
-  <%= submit_tag 'Login To The Pub' %>
 
-<% end %>
+<div class="jumbotron">
+  <div class="container">
+    <div class="col-md-8">
+      <h2>Login </h2>
+      <%= form_tag login_path do %>
+        <%= label_tag :email %>: <%= text_field_tag :email_address %> </br>
+        <%= label_tag :password %>: <%= password_field_tag :password %> </br>
+        <%= submit_tag 'Login To The Pub' %>
+
+      <% end %>
+    <br>
+      <p> Our Beer is as cold as you'r ex's heart.</p>
+    </div>
+    <div class="col-md-4">
+      <div class="login_beer"></div>
+  </div>
+</div>
