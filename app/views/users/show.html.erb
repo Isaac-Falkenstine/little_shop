@@ -2,7 +2,7 @@
   <div class="container">
     <div class="col-md-8">
       <h1>Welcome, <%= @user.first_name %>  <%= @user.last_name %></h1>
-      <p><a class="btn btn-primary btn-lg" href='<%= edit_user_path(@user) %>' role="button"> Edit your personal info</a></p>
+      <p> <%= link_to "Edit your personal info", edit_user_path(@user), method: :get %> </p>
     </div>
   </div>
 <div class="row">
