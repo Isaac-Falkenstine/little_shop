@@ -2,14 +2,14 @@
   <div class="container">
     <div class="col-md-8">
       <h1>Welcome, <%= @user.first_name %>  <%= @user.last_name %></h1>
-      <p><a class="btn btn-primary btn-lg" href="#" role="button"> Edit your personal info</a></p>
+      <p><a class="btn btn-primary btn-lg" href='<%= edit_user_path(@user) %>' role="button"> Edit your personal info</a></p>
     </div>
   </div>
 <div class="row">
-  <h1>Your personal info:</h1>
+  <h2>Your personal info:</h2>
   <div class="smallthings">
-  	<div class="col-md-3">
-      Address: <%= @user.street_address %> <%= @user.city %> <%= @user.state %> <%= @user.zip%><br />
+  	<div class="col-md-5">
+      Address: <%= @user.street_address %>, <%= @user.city %>, <%= @user.state %> <%= @user.zip%><br />
       email: <%= @user.email_address %><br />
     </div>
   </div>
