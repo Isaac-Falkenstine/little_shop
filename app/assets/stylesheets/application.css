@@ -54,3 +54,9 @@
             background-image: url("beer_login.jpg");
             background-size: cover;
            }
+
+.welcome_dog   { width: 375px;
+            height: 250px;
+            background-image: url("welcome_dog.gif");
+            background-size: cover;
+           }

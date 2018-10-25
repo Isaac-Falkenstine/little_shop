@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :items, only: [:new, :create, :andothershit]
   end
 
+  resources :welcome, only: [:index]
   resources :items
   resources :users
 
