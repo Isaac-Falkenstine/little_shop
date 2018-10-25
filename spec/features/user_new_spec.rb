@@ -19,7 +19,7 @@ describe 'user registration' do
     expect(page).to have_button("Create User")
   end
 
-  it 'anonymous visitor' do
+  it 'anonymous visitor registers and sees pop up' do
     visit '/'
 
     click_on 'Register'
