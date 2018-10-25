@@ -48,3 +48,21 @@
 
 .boxed     { border: 1px solid cyan;
              color: white}
+
+.login_beer   { width: 180px;
+            height: 180px;
+            background-image: url("beer_login.jpg");
+            background-size: cover;
+           }
+
+.welcome_dog   { width: 375px;
+            height: 250px;
+            background-image: url("welcome_dog.gif");
+            background-size: cover;
+           }
+
+.beer_regi   { width: 350px;
+            height: 350px;
+            background-image: url("beer_regi.jpg");
+            background-size: cover;
+           }
