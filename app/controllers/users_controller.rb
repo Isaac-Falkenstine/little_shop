@@ -24,8 +24,13 @@ class UsersController < ApplicationController
   end
 
   def update
-    User.find(params[:id]).update(update_params)
-    redirect_to user_path(params[:id])
+    if User.find(params[:id]).update(update_params)
+      redirect_to user_path(params[:id])
+      flash[:notice] = "Info succesfully edited!"
+    else
+      redirect_to edit_user_path(params[:id])
+      flash[:notice] = "That E-Mail is already in use!"
+    end
   end
 
   private
