@@ -28,6 +28,9 @@
              color: black;
              font-family: fantasy;}
 
+.row       { display: table; }
+
+
 .title     { display: flex;
              justify-content: center;
              color: white; font-family: fantasy;}
@@ -43,8 +46,10 @@
              background-size: cover;
             }
 
-.smallthings {font-size: 1em;
-              padding:0px 0 0px 0;}
+.smallthings {font-size: .9em;
+              float: none;
+              display: table-cell;
+              vertical-align: top;}
 
 .boxed     { border: 1px solid cyan;
              color: white}
