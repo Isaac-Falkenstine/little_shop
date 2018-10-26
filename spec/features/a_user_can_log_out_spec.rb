@@ -14,7 +14,7 @@ feature "a user can log out" do
     fill_in :user_last_name, with: 'Falkenstine'
     fill_in :user_street_address, with: "1234 Coral Ln."
     fill_in :user_city, with: 'Denver'
-    fill_in :user_zip, with: 123456
+    fill_in :user_zip, with: 12345
     fill_in :user_state, with: 'Colorado'
 
     click_on 'Create User'

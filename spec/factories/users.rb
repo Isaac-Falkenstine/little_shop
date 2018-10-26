@@ -7,6 +7,6 @@ FactoryBot.define do
     sequence(:password) {|n| "password #{n}"}
     sequence(:city) {|n| "city #{n}"}
     sequence(:state) {|n| "state #{n}"}
-    sequence(:zip) {|n| "zip #{n}"}
+    sequence(:zip) {|n| 12345}
   end
 end
