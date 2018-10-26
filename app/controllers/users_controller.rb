@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def create
      @user = User.new(user_params)
-     if @user.save
+     if @user.save && (Math.log10(user_params[:zip].to_i).to_i + 1 == 5)
        session[:user_id] = @user.id
        flash[:success] = "Welcome #{@user.first_name} to the Pubshop App!"
 
