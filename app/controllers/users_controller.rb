@@ -12,12 +12,11 @@ class UsersController < ApplicationController
      if @user.save && (Math.log10(user_params[:zip].to_i).to_i + 1 == 5)
        session[:user_id] = @user.id
        flash[:success] = "Welcome #{@user.first_name} to the Pubshop App!"
-
        redirect_to user_path(@user)
      else
        render :new
      end
-   end
+  end
 
   def edit
     @user = User.find(params[:id])
