@@ -12,35 +12,35 @@
   </head>
   <body>
   <div class="container">
-  <nav class="navbar navbar-inverse navbar-static-top">
-  <div class="col-md-2">
-        <ul><a href='/'>Home</a></ul>
-        <ul><a href= <%= items_path %> >Items for Sale</a></ul>
-        <ul><a href="#">Merchants</a></ul>
+    <nav class="navbar navbar-inverse navbar-static-top">
+      <div class="col-md-2">
+            <ul><a href='/'>Home</a></ul>
+            <ul><a href= <%= items_path %> >Items for Sale</a></ul>
+            <ul><a href="#">Merchants</a></ul>
+      </div>
+      <div class="col-md-8">
+        <div class="container-fluid-nav title">
+          <h1>The Pub Shop</h1><div class="supertitle">  a little shop of choice victuals</div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <% if session[:user_id].nil? %>
+    		<ul><a href= <%= login_path %> >Login</a></ul>
+    		<ul><a href= <%= new_user_path %> >Register</a></ul>
+        <% else  %>
+          <ul><%= link_to 'Logout', logout_path(session[:user_id]), method: :delete %></ul>
+          <ul><a href= <%= dashboard_path(session[:user_id]) %> >Dashboard</a></ul>
+        <% end %>
+        <ul ><a href= <%= items_path %> >Cart Items: </a><b class="boxed">0</b></ul>
+      </div>
+    </nav>
   </div>
-  <div class="col-md-8">
-    <div class="container-fluid-nav title">
-      <h1>The Pub Shop</h1><div class="supertitle">  a little shop of choice victuals</div>
-    </div>
+  <div class="container">
+     <% flash.each do |key, value| %>
+          <div class="alert alert-<%= key %>"><%= value %></div>
+        <% end %>
+    <%= yield %>
   </div>
-  <div class="col-md-2">
-    <% if session[:user_id].nil? %>
-		<ul><a href= <%= login_path %> >Login</a></ul>
-		<ul><a href= <%= new_user_path %> >Register</a></ul>
-    <% else  %>
-      <ul><%= link_to 'Logout', logout_path(session[:user_id]), method: :delete %></p></ul>
-    <% end %>
-    <ul ><a href= <%= items_path %> >Cart Items: </a><b class="boxed">0</b></ul>
-  </nav>
-
-  </div>
-</div>
-<div class="container">
-   <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
-      <% end %>
-  <%= yield %>
-</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
