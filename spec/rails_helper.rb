@@ -69,7 +69,10 @@ RSpec.configure do |config|
 #     DatabaseCleaner.clean
 #   end
 config.include FactoryBot::Syntax::Methods
-
+config.after(:each) do
+    # reset all FactoryBot sequences after each test
+    FactoryBot.reload
+  end
  end
 
 
