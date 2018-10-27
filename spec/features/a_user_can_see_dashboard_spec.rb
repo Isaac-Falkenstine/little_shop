@@ -18,12 +18,15 @@ feature "a user can see dashboard" do
     fill_in :user_state, with: 'Colorado'
 
     click_on 'Create User'
-
-    expect(current_path).to eq(user_path(User.last))
+    user_last = User.last
+    expect(current_path).to eq(user_path(user_last))
+   
+    
     click_on "Dashboard"
-    expect(current_path).to eq("/dashboard")
-
-    expect(page).to have_content("#{User.last.first_name} Dashboard")
+    
+    expect(current_path).to eq("/dashboard.#{user_last.id}")
+    save_and_open_page
+    expect(page).to have_content("#{user_last.first_name} Dashboard")
     expect(current_path).to eq("/dashboard")
   end
 end
