@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-feature "a user can log out" do
-  scenario "after when logged in" do
+feature "when a user is logged in" do
+  scenario "he has a dashboard link and can logout" do
 
     visit '/'
 
@@ -22,6 +22,7 @@ feature "a user can log out" do
     expect(current_path).to eq(user_path(User.last))
     expect(page).to have_content("Welcome #{User.last.first_name} to the Pubshop App!")
     expect(page).to have_content("Welcome, #{User.last.first_name} #{User.last.last_name}")
+    expect(page).to have_content("Dashboard")
 
     click_on "Logout"
     expect(current_path).to eq("/")
