@@ -9,10 +9,21 @@ class Dashboard::ItemsController < ApplicationController
   end
 
   def create
+    @item = Item.new(item_params)
     if @item.save
-      redirect_to(dashboard_user_path(merchant))
+      session[:item_id] = @item.id
+      flash[:success] = "Item #{@item.name} has been saved"
+      redirect_to dashboard_items_path
     else
       render :new
+      flash[:notice] = "failed! "
     end
   end
+
+  private
+
+  def item_params
+    params.require(:item).permit(:name, :description, :thumbnail, :price, :inventory)
+  end
+
 end

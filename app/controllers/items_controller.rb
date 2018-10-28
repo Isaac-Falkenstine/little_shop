@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-
+  
   def index
     @items = Item.all
   end
@@ -9,20 +9,20 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = item.new(items_params)
-    if @items.save 
-      session[:items_id] = @items.id
-      flash[:success] = "Welcome #{@items.first_name} to the Pubshop App!"
-      redirect_to items_path(@items)
+    @item = Item.new(item_params)
+    if @item.save
+      session[:item_id] = @item.id
+      flash[:success] = "Item #{@item.name} has been saved"
+      redirect_to dashboard_items_path
     else
       render :new
-      flash[:notice] = "Register failed! Either that e-mail is taken or your address is invaild!"
+      flash[:notice] = "failed! "
     end
   end
 
   private
 
-  def items_params
+  def item_params
     params.require(:item).permit(:name, :description, :thumbnail, :price, :inventory)
   end
 
