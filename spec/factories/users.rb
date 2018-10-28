@@ -9,6 +9,7 @@ FactoryBot.define do
     sequence(:state) {|n| "state #{n}"}
     zip {12345}
     role {0}
+    
   end
 
   factory :merchant, parent: :user do
