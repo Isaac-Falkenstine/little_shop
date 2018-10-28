@@ -3,7 +3,7 @@
     <div class="col-md-8">
       <h1>Item addition!</h1>
 
-      <%= form_for @item do |f| %>
+      <%= form_for [:dashboard, @item] do |f| %>
         <%= f.label :name %>:
         <%= f.text_field :name %> <br>
 
