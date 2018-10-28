@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-feature "when a user is logged in" do
-  scenario "he has a dashboard link and can logout" do
+describe "the user navbar options" do
+  scenario "when registered you get a functional account dropdown and can logout" do
 
     visit '/'
 
@@ -22,11 +22,15 @@ feature "when a user is logged in" do
     expect(current_path).to eq(user_path(User.last))
     expect(page).to have_content("Welcome #{User.last.first_name} to the Pubshop App!")
     expect(page).to have_content("Welcome, #{User.last.first_name} #{User.last.last_name}")
-    expect(page).to have_content("Dashboard")
+
+    click_on "Account"
+    expect(page).to have_content("Profile")
+    expect(page).to have_content("Orders")
 
     click_on "Logout"
     expect(current_path).to eq("/")
     expect(page).to have_content("You have been logged out")
     expect(page).to have_content("Login")
   end
+
 end
