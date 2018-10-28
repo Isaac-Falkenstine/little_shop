@@ -24,9 +24,8 @@ feature "a user can see dashboard" do
     
     click_on "Dashboard"
     
-    expect(current_path).to eq("/dashboard.#{user_last.id}")
+    expect(current_path).to eq("/dashboard/users/#{user_last.id}")
     save_and_open_page
-    expect(page).to have_content("#{user_last.first_name} Dashboard")
-    expect(current_path).to eq("/dashboard")
+    expect(page).to have_content("Welcome, #{user_last.first_name} To Your #{user_last.role} Dashboard")
   end
 end
