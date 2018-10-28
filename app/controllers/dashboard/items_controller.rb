@@ -9,9 +9,8 @@ class Dashboard::ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new
     if @item.save
-      redirect_to (dashboard_user_path(merchant))
+      redirect_to(dashboard_user_path(merchant))
     else
       render :new
     end
