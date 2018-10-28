@@ -47,12 +47,13 @@ feature "when a merchant user is logged in" do
 
     click_on 'Your Items'
     click_on 'Add Item'
+    
     expect(current_path).to eq(new_dashboard_item_path)
-
-    fill_in :iname, with: "Jeep"
-    fill_in :description, with: "kick ass off road vehicle!"
-    fill_in :thumbnail, with: "https://cimg6.ibsrv.net/gimg/www.jk-forum.com-vbulletin/2000x1333/img_7093_ace7e7a15cab63d32c9fe40f367bdc0baf8ec8b3.jpg"
-    fill_in :price, with: 55000
+    fill_in :item_name, with: "Jeep"
+    fill_in :item_description, with: "kick ass off road vehicle!"
+    fill_in :item_thumbnail, with: "https://cimg6.ibsrv.net/gimg/www.jk-forum.com-vbulletin/2000x1333/img_7093_ace7e7a15cab63d32c9fe40f367bdc0baf8ec8b3.jpg"
+    fill_in :item_price, with: 55000
+    fill_in :item_inventory, with: 55
     click_on 'submit'
   end
 end
