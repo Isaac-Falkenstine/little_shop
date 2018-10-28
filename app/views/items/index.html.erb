@@ -6,20 +6,26 @@
       <p><a class="btn btn-primary btn-lg" href="#" role="button">Do Someting »</a> <a class="btn btn-primary btn-lg" href="#" role="button">Do Another Thing »</a></p>
     </div>
     <div class="col-md-4">
-    <div class="bignail"></div>
+      <div class="bignail"></div>
+    </div>
   </div>
 </div>
 
 <div class="container">
-    <div class="row">
-      <div class="smallthings">
+  <div class="row">
+    <div class="smallthings">
       <% @items.each do |item| %>
     	<div class="col-md-4">
-        <a href='<%= item_path(item) %>'><b><%= item.name %></b></a><br />
-        Description: <%= item.description %><br />
-        Price: $<%= item.price %><br />
-        We have <%= item.inventory %> in stock<br />
-        <img src="<%=item.thumbnail%>" class="thumbnail">
+        <div class="card-deck">
+          <div class="card h-100">
+            <img class="thumbnail" src="<%=item.thumbnail%>" class="thumbnail" alt="#{item.name}">
+            <div class="card-body">
+              <h5 class="card-title"><a href='<%= item_path(item) %>'><b><%= item.name %></a></h5>
+              Description: <%= item.description %><br />
+              <p class="card-text">Price: $<%= item.price %><small class="text-muted">  We have <%= item.inventory %> in stock</small></p>
+            </div>
+          </div>
+        </div>
       </div>
       <% end %>
     </div>

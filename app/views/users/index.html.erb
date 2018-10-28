@@ -6,13 +6,14 @@
       <p><a class="btn btn-primary btn-lg" href="#" role="button">Do Someting »</a> <a class="btn btn-primary btn-lg" href="#" role="button">Do Another Thing »</a></p>
     </div>
     <div class="col-md-4">
-    <div class="bignail"></div>
+      <div class="bignail"></div>
+    </div>
   </div>
 </div>
 
 <div class="container">
-    <div class="row">
-      <div class="smallthings">
+  <div class="row">
+    <div class="nabvar">
       <% @users.each do |user| %>
     	<div class="col-md-4">
         <a href='<%= user_path(user) %>'><b><%= user.first_name %></b></a><br />

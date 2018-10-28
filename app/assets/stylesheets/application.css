@@ -28,7 +28,8 @@
              color: black;
              font-family: fantasy;}
 
-.row       { display: table; }
+.row       { display: flex;
+             flex-wrap: wrap;}
 
 
 .title     { display: flex;
@@ -46,10 +47,8 @@
              background-size: cover;
             }
 
-.smallthings {font-size: .9em;
-              float: none;
-              display: table-cell;
-              vertical-align: top;}
+.smallthings {font-size: .9em;}
+
 
 .boxed     { border: 1px solid cyan;
              color: white}
