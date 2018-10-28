@@ -5,10 +5,15 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
-  get '/dashboard', to: 'dashboard#show'
+  # get '/dashboard', to: 'dashboard#user', as:'dashboard'
 
+  # namespace :dashboard do
+  #   get '', to: 'dashboard#index'
+  #   # root to: "dashboard#user"
+  # end
   namespace :dashboard do
-    resources :items, only: [:new, :create, :andothershit]
+    root to: "users#index"
+    resources :users
   end
 
   resources :welcome, only: [:index]

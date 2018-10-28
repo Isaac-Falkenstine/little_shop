@@ -21,9 +21,11 @@ ActiveRecord::Schema.define(version: 20181024004651) do
     t.bigint "price"
     t.integer "inventory"
     t.string "description"
+    t.bigint "user_id"
     t.boolean "enabled", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "order_items", force: :cascade do |t|
@@ -60,6 +62,7 @@ ActiveRecord::Schema.define(version: 20181024004651) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "items", "users"
   add_foreign_key "order_items", "items"
   add_foreign_key "order_items", "orders"
   add_foreign_key "orders", "users"

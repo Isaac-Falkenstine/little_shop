@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'user show page' do
   it 'user can see their info on their show page' do
-    user = create(:user)
+     user = create(:user)
 
     visit user_path(User.last)
 

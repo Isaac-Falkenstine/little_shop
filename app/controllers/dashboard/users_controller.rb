@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Dashboard::UsersController < ApplicationController
   def new
     @user = User.new
   end
@@ -15,7 +15,6 @@ class UsersController < ApplicationController
        redirect_to user_path(@user)
      else
        render :new
-       flash[:notice] = "Register failed! Either that e-mail is taken or your address is invaild!"
      end
   end
 
