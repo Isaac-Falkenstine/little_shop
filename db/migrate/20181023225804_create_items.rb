@@ -6,6 +6,7 @@ class CreateItems < ActiveRecord::Migration[5.1]
       t.bigint :price
       t.integer :inventory
       t.string :description
+      t.references :user, foreign_key: true
       t.boolean :enabled, default: false
 
       t.timestamps
