@@ -15,6 +15,7 @@ class UsersController < ApplicationController
        redirect_to user_path(@user)
      else
        render :new
+       flash[:notice] = "Register failed! Either that e-mail is taken or your address is invaild!"
      end
   end
 

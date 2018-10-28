@@ -16,6 +16,7 @@ require "rails_helper"
   describe User, type: :model do
     describe 'Relationship' do
       it {should have_many(:orders)}
+      it {should have_many(:items)}
     end
 
   it "checks role of instance of user" do
@@ -28,4 +29,3 @@ require "rails_helper"
     expect(admin.role).to eq("admin")
   end
 end
-
