@@ -14,9 +14,9 @@
   <div class="container">
     <nav class="navbar navbar-inverse navbar-static-top">
       <div class="col-md-2">
-            <ul><a href='/'>Home</a></ul>
-            <ul><a href= <%= items_path %> >Items for Sale</a></ul>
-            <ul><a href="#">Merchants</a></ul>
+            <a href='/'>Home</a><br />
+            <a href= <%= items_path %> >Items for Sale</a><br />
+            <a href="#">Merchants</a><br />
       </div>
       <div class="col-md-8">
         <div class="container-fluid-nav title">
@@ -25,13 +25,23 @@
       </div>
       <div class="col-md-2">
         <% if session[:user_id].nil? %>
-    		<ul><a href= <%= login_path %> >Login</a></ul>
-    		<ul><a href= <%= new_user_path %> >Register</a></ul>
+    		<a href = <%= login_path %> >Login</a><br />
+    		<a href = <%= new_user_path %> >Register</a><br />
         <% else  %>
-          <ul><%= link_to 'Logout', logout_path(session[:user_id]), method: :delete %></ul>
-          <ul><a href= <%= dashboard_user_path(session[:user_id]) %> >Dashboard</a></ul>
+          <%= link_to 'Logout', logout_path(session[:user_id]), method: :delete %><br />
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" >Account<span class="caret"></span></a><br />
+					<ul class="dropdown-menu">
+						<ul><a href = <%= user_path(session[:user_id]) %>>Profile</a></ul>
+						<ul><a href = "#">Orders</a></ul>
+            <% if current_user.role != "default" %>
+						<ul><a href = <%= dashboard_user_path(session[:user_id]) %> >Dashboard</a></ul>
+            <% if current_user.role == "admin" %>
+    					<ul><a href = <%= users_path %> >Users</a></ul>
+              <% end %>
+            <% end %>
+					</ul>
         <% end %>
-        <ul ><a href= <%= items_path %> >Cart Items: </a><b class="boxed">0</b></ul>
+        <a href = <%= items_path %> >Cart Items: </a><b class="boxed">0</b>
       </div>
     </nav>
   </div>
