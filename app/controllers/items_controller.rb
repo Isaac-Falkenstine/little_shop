@@ -14,6 +14,7 @@ class ItemsController < ApplicationController
       flash[:notice] = "Info succesfully edited!"
     else
       redirect_to edit_item_path(params[:id])
+      flash[:notice] = "Update Failed! Please make sure no fields are left empty"
     end
   end
 

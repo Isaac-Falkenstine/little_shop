@@ -25,7 +25,6 @@ feature "when a user is logged in" do
 
     expect(current_path).to eq(dashboard_items_path)
     expect(page).to have_content("Baseball")
-    expect(page).to have_content("Baseball")
     expect(page).to have_content("Bat")
     expect(page).to_not have_content("Glove")
 

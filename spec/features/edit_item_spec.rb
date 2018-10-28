@@ -19,6 +19,7 @@ describe 'Editing items' do
     click_on 'Login To The Pub'
     expect(current_path).to eq(user_path(user))
 
+
     click_on 'Dashboard'
     click_on 'Your Items'
 
@@ -26,12 +27,15 @@ describe 'Editing items' do
       click_on 'Edit Item'
     end
 
+    expect(current_path).to eq(edit_item_path(Item.first))
+
     fill_in :item_name, with: "Basketball"
 
     click_on "Update Item"
 
-
+    expect(current_path).to eq(dashboard_items_path)
     expect(page).to have_content("Basketball")
+    expect(page).to have_content("Info succesfully edited!")
     expect(page).to_not have_content("Baseball")
   end
 end
