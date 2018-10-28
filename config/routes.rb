@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   namespace :dashboard do
     root to: "users#index"
     resources :users
+
     root to: "items#index"
     resources :items
   end

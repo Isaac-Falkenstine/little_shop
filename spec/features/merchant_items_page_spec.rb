@@ -7,7 +7,7 @@ feature "when a user is logged in" do
                           city: "Lone Tree", state: "Colorado", zip: 81234, email_address: "merchant@email.com", password: "pass123", role: 1)
     user.items.create(name: "Baseball", description: "You can hit it!", price: 2.00, inventory: 45, thumbnail: "https://vignette.wikia.nocookie.net/harrypotter/images/7/79/Kreacher.img.jpg/revision/latest?cb=20090814153229")
     user.items.create(name: "Bat", description: "You can hit stuff with it!", price: 5.00, inventory: 28, thumbnail: "https://images.pigeonsandplanes.com/images/c_limit,f_auto,fl_lossy,q_auto,w_1100/idynbahcpfwsrffsug8f/migos-press-david-rams")
-    Item.create(name: "Golve", description: "You can catch stuff with it!", price: 10.00, inventory: 48, thumbnail: "img.jpeg")
+    Item.create(name: "Glove", description: "You can catch stuff with it!", price: 10.00, inventory: 48, thumbnail: "img.jpeg")
 
     visit '/'
 
@@ -23,10 +23,11 @@ feature "when a user is logged in" do
     click_on 'Dashboard'
     click_on 'Your Items'
 
-    expect(current_path).to eq("/dashboard/users/#{user.id}items")
+    # expect(current_path).to eq("/dashboard/users/#{user.id}items")
     expect(page).to have_content("Baseball")
     expect(page).to have_content("Baseball")
     expect(page).to have_content("Bat")
+    expect(page).to_not have_content("Glove")
 
   end
 end

@@ -28,21 +28,25 @@ end
 reg_user = User.create(first_name: "Regular", last_name: "User", street_address: "1234 Normal St.",
                        city: "Lone Tree", state: "Colorado", zip: 81234, email_address: "regular@email.com", password: "pass123")
 
-merch_user = User.create(first_name: "Merchant", last_name: "User", street_address: "1234 Sales St.",
+merch_user = User.create(first_name: "Merchant of beer", last_name: "User", street_address: "1234 Sales St.",
                       city: "Lone Tree", state: "Colorado", zip: 81234, email_address: "merchant@email.com", password: "pass123", role: 1)
 
-merch_user_2 = User.create(first_name: "Merchant", last_name: "User", street_address: "1234 Sales St.",
+merch_user_2 = User.create(first_name: "Merchant of food", last_name: "User", street_address: "1234 Sales St.",
                       city: "Lone Tree", state: "Colorado", zip: 81234, email_address: "merchant1@email.com", password: "pass123", role: 1)
 
 admin_user = User.create(first_name: "Admin", last_name: "User", street_address: "1234 Boss St.",
                        city: "Lone Tree", state: "Colorado", zip: 81234, email_address: "admin@email.com", password: "pass123", role: 2)
 
-8.times do
+num = 8
+
+num.times do
  prepare_item_1
  merch_user.items.create(@item_hash_1)
 end
+p "Created #{num} beers"
 
-8.times do
+num.times do
  prepare_item_2
  merch_user_2.items.create(@item_hash_2)
 end
+p "Created #{num} foods"
