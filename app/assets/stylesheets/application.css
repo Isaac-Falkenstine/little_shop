@@ -25,10 +25,14 @@
 .jumbotron { margin-top: 5;
              margin-bottom: 5;
              padding:5px 0 5px 0;
-             color: black;
              font-family: fantasy;}
 
 .row       { display: table; }
+
+hr         { width: 100%;
+             margin-left: auto;
+             margin-right: auto;
+             border-color: black}
 
 
 .title     { display: flex;

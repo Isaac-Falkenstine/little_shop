@@ -3,25 +3,26 @@
     <div class="col-md-8">
       <h1>Items For Sale</h1>
       <p>Delivery is always free. Because elves love making you happy.</p>
-      <p><a class="btn btn-primary btn-lg" href="#" role="button">Do Someting »</a> <a class="btn btn-primary btn-lg" href="#" role="button">Do Another Thing »</a></p>
     </div>
     <div class="col-md-4">
-    <div class="bignail"></div>
+      <div class="bignail"></div>
+    </div>
+    <hr>
   </div>
-</div>
 
-<div class="container">
-    <div class="row">
-      <div class="smallthings">
-      <% @items.each do |item| %>
-    	<div class="col-md-4">
-        <a href='<%= item_path(item) %>'><b><%= item.name %></b></a><br />
-        Description: <%= item.description %><br />
-        Price: $<%= item.price %><br />
-        We have <%= item.inventory %> in stock<br />
-        <img src="<%=item.thumbnail%>" class="thumbnail">
+  <div class="container">
+      <div class="row">
+        <div class="smallthings">
+        <% @items.each do |item| %>
+          <div class="col-lg-4 d-flex align-items-stretch">
+          <a href='<%= item_path(item) %>'><b><%= item.name %></b></a><br />
+          Description: <%= item.description %><br />
+          Price: $<%= item.price %><br />
+          We have <%= item.inventory %> in stock<br />
+          <img src="<%=item.thumbnail%>" class="thumbnail">
+        </div>
+        <% end %>
       </div>
-      <% end %>
     </div>
   </div>
 </div>
