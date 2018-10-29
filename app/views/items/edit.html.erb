@@ -1,20 +1,29 @@
-<h1>Edit Item Info here:</h1>
+<div class="jumbotron">
+  <div class="container">
+    <div class="col-md-8">
+<h1>Edit Item info here:</h1>
 
-<%= form_for @item do |f| %>
+<%= form_for @item do |f| %><br>
+
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name %> <br>
 
   <%= f.label :description %>
-  <%= f.text_field :description %>
+  <%= f.text_field :description %> <br>
 
   <%= f.label :price %>
-  <%= f.number_field :price %>
+  <%= f.number_field :price %> <br>
 
   <%= f.label :inventory %>
-  <%= f.number_field :inventory %>
+  <%= f.number_field :inventory %> <br>
 
   <%= f.label :thumbnail %>
-  <%= f.text_field :thumbnail %>
+  <%= f.text_field :thumbnail %> <br>
 
   <%= f.submit %>
 <% end %>
+      </div>
+    <div class="col-md-4">
+    <div class="cheers"></div>
+  </div>
+</div>

@@ -124,6 +124,12 @@ it "they can navigate to adding an item" do
 
     end
 
+<<<<<<< HEAD:spec/features/merchant_item_manipulation_spec.rb
+=======
+    expect(current_path).to eq(dashboard_items_path)
+
+    expect(page).to have_content "Item name: Jeep"
+>>>>>>> d72b5a417d438b8a3e204d6fc29d04fb3b9c8582:spec/features/merchant_user_adding_item_spec.rb
   end
 
 end

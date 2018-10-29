@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="jumbotron">
   <div class="container">
     <div class="col-md-8">
@@ -6,6 +7,22 @@
     </div>
     <div class="col-md-4">
     <div class="bignail"></div>
+=======
+<h1><%= @user.first_name %>  <% @user.last_name %>'s items' </h1>
+
+<% num = 0 %>
+
+<a href='<%= new_dashboard_item_path %>'><b><%= 'Add Item' %></b></a><br />
+
+
+<% @items.each do |item| %>
+  <p>============================</p>
+  <p>Item name: <%= item.name %></p>
+  <p>Item price: <%= item.price %></p>
+  <p>Item description: <%= item.description %></p>
+  <div id="<%= num %>">
+    <p> <%= link_to "Edit Item", edit_item_path(item), method: :get %> </p>
+>>>>>>> d72b5a417d438b8a3e204d6fc29d04fb3b9c8582
   </div>
 </div>
 <div class="container">
