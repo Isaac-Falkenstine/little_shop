@@ -1,17 +1,27 @@
-<h1><%= @user.first_name %>  <% @user.last_name %>'s items' </h1>
-
-<a href='<%= new_dashboard_item_path %>'><b><%= 'Add Item' %></b></a><br />
-
-
-<% num = 0 %>
-<% @items.each do |item| %>
-  <p>============================</p>
-  <p>Item name: <%= item.name %></p>
-  <p>Item price: <%= item.price %></p>
-  <p>Item description: <%= item.description %></p>
-  <div id="<%= num %>">
-    <p> <%= link_to "Edit Item", edit_item_path(item), method: :get %> </p>
+<div class="jumbotron">
+  <div class="container">
+    <div class="col-md-8">
+      <h1><%= @user.first_name %>  <% @user.last_name %>'s items' </h1>
+      <a href='<%= new_dashboard_item_path %>'><b><%= 'Add Item' %></b></a><br />
+    </div>
+    <div class="col-md-4">
+    <div class="bignail"></div>
   </div>
-  <p>============================</p>
-  <% num += 1 %>
-<% end %>
+</div>
+<div class="container">
+  <div class="row">
+    <div>
+      <% @items.each do |item| %>
+    	<div class="col-md-4" id="item-<%=item.id%>">
+        <p>Item name: <%= item.name %></p>
+        <p>Item price: <%= item.price %></p>
+        <p>Item description: <%= item.description %></p>
+        <p> <%= link_to "Edit Item", edit_item_path(item), method: :get %> </p>
+        Enabled: <%= item.enabled %><br />
+        <%= link_to 'Enable', enableitem_path(:id => item.id), method: :put, :class => "btn btn-outline-success" %>
+        <%= link_to 'Disable', disableitem_path(:id => item.id),  method: :put, :class => "btn btn-outline-danger" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
