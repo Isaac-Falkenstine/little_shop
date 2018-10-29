@@ -7,7 +7,6 @@ describe 'user sees can go into an item show page' do
     item_3 = create(:item)
 
     visit item_path(item_1)
-
     expect(current_path).to eq(item_path(item_1))
     expect(page).to have_content(item_1.name)
   end
