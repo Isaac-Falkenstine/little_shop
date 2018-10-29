@@ -34,6 +34,28 @@ class ItemsController < ApplicationController
     end
   end
 
+  def disable
+    item = Item.find(params[:id])
+    if current_user.merchant?
+      item.disable_item
+      flash[:notice] = "Item is no longer for sale"
+      redirect_to dashboard_items_path
+    else
+      redirect_to :back
+    end
+  end
+
+  def enable
+    item = Item.find(params[:id])
+    if current_user.merchant?
+      item.enable_item
+      flash[:notice] = "Item is now available for sale"
+      redirect_to dashboard_items_path
+    else
+      redirect_to :back
+    end
+  end
+
   private
 
   def item_params

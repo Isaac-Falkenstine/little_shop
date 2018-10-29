@@ -7,12 +7,9 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   put "/disable", to: "users#disable"
   put "/enable", to: "users#enable"
-  # get '/dashboard', to: 'dashboard#user', as:'dashboard'
+  put "/disableitem", to: "items#disable"
+  put "/enableitem", to: "items#enable"
 
-  # namespace :dashboard do
-  #   get '', to: 'dashboard#index'
-  #   # root to: "dashboard#user"
-  # end
   namespace :dashboard do
     root to: "users#index"
     resources :users

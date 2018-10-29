@@ -17,4 +17,10 @@ class User < ApplicationRecord
     deadtome.save
   end
 
+  def enable_account
+    lazurus = User.find(id)
+    lazurus.enabled = true
+    lazurus.save
+  end
+
 end

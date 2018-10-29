@@ -47,6 +47,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def enable
+    user = User.find(params[:id])
+    if current_user.admin?
+      user.enable_account
+      redirect_to users_path
+    else
+      redirect_to :back
+    end
+  end
+
   private
 
   def user_params
