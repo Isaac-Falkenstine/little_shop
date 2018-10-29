@@ -4,10 +4,6 @@ class ItemsController < ApplicationController
     @items = Item.all
   end
 
-  def new
-    @item = Item.new
-  end
-
   def create
     @item = current_user.items.new(item_params)
     if @item.save
