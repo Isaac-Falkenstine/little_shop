@@ -11,7 +11,6 @@ RSpec.describe 'basic cart function' do
     within "#item-#{item_1.id}" do
       click_on "Add To Cart"
     end
-   save_and_open_page
     expect(page).to have_content('Cart Items: 1')
    
     within "#item-#{item_1.id}" do
@@ -19,5 +18,14 @@ RSpec.describe 'basic cart function' do
 
     end
     expect(page).to have_content('Cart Items: 2')
+
+    within "#item-#{item_2.id}" do
+      click_on "Add To Cart"
+
+    end
+    expect(page).to have_content('Cart Items: 3')
+
+
+
   end
 end
