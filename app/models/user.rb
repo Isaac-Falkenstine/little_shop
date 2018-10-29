@@ -10,4 +10,11 @@ class User < ApplicationRecord
   has_secure_password
 
   enum role: [:default, :merchant, :admin]
+
+  def disable_account
+    deadtome = User.find(id)
+    deadtome.enabled = false
+    deadtome.save
+  end
+
 end

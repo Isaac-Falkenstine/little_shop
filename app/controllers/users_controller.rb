@@ -37,6 +37,16 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def disable
+    user = User.find(params[:id])
+    if current_user.admin?
+      user.disable_account
+      redirect_to users_path
+    else
+      redirect_to :back
+    end
+  end
+
   private
 
   def user_params
