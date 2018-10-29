@@ -11,17 +11,17 @@
   </div>
 
   <div class="container">
-      <div class="row">
-        <div class="smallthings">
-        <% @items.each do |item| %>
-          <div class="col-lg-4 d-flex align-items-stretch">
+    <div class="row">
+      <div class="smallthings">
+      <% @items.each do |item| %>
+        <div class="col-lg-4 d-flex align-items-stretch">
           <a href='<%= item_path(item) %>'><b><%= item.name %></b></a><br />
           Description: <%= item.description %><br />
           Price: $<%= item.price %><br />
           We have <%= item.inventory %> in stock<br />
-          <img src="<%=item.thumbnail%>" class="thumbnail">
+          <img src="<%=item.thumbnail%>" class="thumbnail"><br />
         </div>
-        <% end %>
+      <% end %>
       </div>
     </div>
   </div>
