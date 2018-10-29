@@ -71,3 +71,9 @@
             background-image: url("beer_regi.jpg");
             background-size: cover;
            }
+
+.cheers   { width: 350px;
+           height: 330px;
+           background-image: url("Atom.gif");
+           background-size: cover;
+          }

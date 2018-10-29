@@ -1,26 +1,35 @@
+<div class="jumbotron">
+  <div class="container">
+    <div class="col-md-8">
 <h1>Edit your info here:</h1>
 
-<%= form_for @user do |f| %>
+<%= form_for @user do |f| %> <br>
+
   <%= f.label :first_name %>
-  <%= f.text_field :first_name %>
+  <%= f.text_field :first_name %> <br>
 
   <%= f.label :last_name %>
-  <%= f.text_field :last_name %>
+  <%= f.text_field :last_name %> <br>
 
   <%= f.label :street_address %>
-  <%= f.text_field :street_address %>
+  <%= f.text_field :street_address %> <br>
 
   <%= f.label :city %>
-  <%= f.text_field :city %>
+  <%= f.text_field :city %> <br>
 
   <%= f.label :zip %>
-  <%= f.number_field :zip %>
+  <%= f.number_field :zip %> <br>
 
   <%= f.label :state %>
-  <%= f.text_field :state %>
+  <%= f.text_field :state %> <br>
 
   <%= f.label :email_address %>
-  <%= f.text_field :email_address %>
+  <%= f.text_field :email_address %> <br>
 
   <%= f.submit %>
 <% end %>
+      </div>
+      <div class="col-md-4">
+    <div class="cheers"></div>
+  </div>
+</div>
