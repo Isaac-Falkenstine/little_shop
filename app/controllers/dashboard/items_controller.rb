@@ -9,7 +9,7 @@ class Dashboard::ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
+    @item = current_user.items.new(item_params)
     if @item.save
       session[:item_id] = @item.id
       flash[:success] = "Item #{@item.name} has been saved"

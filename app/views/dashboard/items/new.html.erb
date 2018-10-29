@@ -3,7 +3,7 @@
     <div class="col-md-8">
       <h1>Item addition!</h1>
 
-      <%= form_for [:dashboard, @item] do |f| %>
+      <%= form_for @item do |f| %>
         <%= f.label :name %>:
         <%= f.text_field :name %> <br>
 
@@ -21,8 +21,6 @@
 
         <%= f.submit %> <br>
       <% end %>
-
-
 
       <p>Add Items above.</p>
     </div>
