@@ -1,9 +1,10 @@
 <h1><%= @user.first_name %>  <% @user.last_name %>'s items' </h1>
 
+<% num = 0 %>
+
 <a href='<%= new_dashboard_item_path %>'><b><%= 'Add Item' %></b></a><br />
 
 
-<% num = 0 %>
 <% @items.each do |item| %>
   <p>============================</p>
   <p>Item name: <%= item.name %></p>

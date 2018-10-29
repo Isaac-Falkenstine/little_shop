@@ -16,7 +16,7 @@ class ItemsController < ApplicationController
       redirect_to dashboard_items_path
     else
       render :new
-      flash[:notice] = "failed! Item could not be created"
+      flash[:notice] = "Item could not be created!"
     end
   end
 
