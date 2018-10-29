@@ -24,6 +24,10 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def show
+    
+  end
+
   def update
     if Item.find(params[:id]).update(update_params)
       redirect_to dashboard_items_path
