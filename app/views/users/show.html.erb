@@ -1,16 +1,12 @@
 <div class="jumbotron">
   <div class="container">
-    <div class="col-md-8">
+    <div class="col-md-12">
       <h1>Welcome, <%= @user.first_name %>  <%= @user.last_name %></h1>
       <p> <%= link_to "Edit your personal info", edit_user_path(@user), method: :get %> </p>
+      <p>Your personal info:
+      Address: <%= @user.street_address %>, <%= @user.city %>, <%= @user.state %> <%= @user.zip%><br />
+      email: <%= @user.email_address %></p>
     </div>
   </div>
 <div class="row">
-  <h2>Your personal info:</h2>
-  <div class="smallthings">
-  	<div class="col-md-5">
-      Address: <%= @user.street_address %>, <%= @user.city %>, <%= @user.state %> <%= @user.zip%><br />
-      email: <%= @user.email_address %><br />
-    </div>
-  </div>
 </div>
