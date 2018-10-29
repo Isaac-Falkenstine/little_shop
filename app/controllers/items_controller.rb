@@ -17,6 +17,8 @@ class ItemsController < ApplicationController
     else
       render :new
       flash[:notice] = "failed! Item could not be created"
+    end
+  end
 
   def edit
     @item = Item.find(params[:id])
@@ -37,7 +39,7 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name, :description, :thumbnail, :price, :inventory)
   end
-      
+
   def update_params
     params.require(:item).permit(:name, :price, :thumbnail, :inventory, :description)
   end
