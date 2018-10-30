@@ -6,8 +6,12 @@ class CartsController < ApplicationController
 
 
     quantity = @cart.count_of(item.id)
-    flash[:notice] = "You Have #{quantity} Number Of #{item.name} In Your Cart"
-    redirect_to items_path
+    flash[:notice] = "You Have #{quantity} #{item.name}s In Your Cart"
+    if params[:path] == nil
+      redirect_to items_path
+    else
+      redirect_to params[:path]
+    end
    end
 
    def index
