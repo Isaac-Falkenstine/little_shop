@@ -14,5 +14,8 @@ class CartsController < ApplicationController
     @items = @cart.contents.keys.map do |item_id|
       item = Item.find(item_id)
     end
+    @total_price = @cart.contents.map do |item_id, quantity|
+      Item.find(item_id).price * quantity
+    end.sum
   end
 end

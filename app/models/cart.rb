@@ -20,10 +20,4 @@ class Cart
   def count_of(item_id)
     @contents[item_id.to_s].to_i
   end
-
-  def total_price
-    items_price_array = self.contents.map do |item_id, quantity|
-      Item.find(item_id).price * quantity
-    end.sum
-  end
 end

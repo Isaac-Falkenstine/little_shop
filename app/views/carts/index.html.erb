@@ -1,8 +1,14 @@
-<% @items.each do |item| %>
-  <%= item.name %>
-  <%= item.find_merchant_for_item %>
-  <%= item.price %>
-  Amount in cart: <%= @cart.count_of(item.id) %>
-  Total price for item: <%= (@cart.count_of(item.id) * item.price) %>
-  Total Cost: <%= @cart.total_price %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="smallthings">
+      <% @items.each do |item| %>
+        <%= item.name %>
+        <%= item.find_merchant_for_item %>
+        <%= item.price %>
+        Amount in cart: <%= @cart.count_of(item.id) %>
+        Total price for item: <%= (@cart.count_of(item.id) * item.price) %>
+        Total Cost: <%= @total_price %>
+      <% end %>
+    </div>
+  </div>
+</div>
