@@ -23,6 +23,7 @@
       </div>
       <% end %>
       <h4>Total Cost for Cart: $<%= @total_price %><br/></h4>
+      <%= button_to 'Empty Cart', carts_path, method: :delete %><br />
     </div>
   </div>
 </div>

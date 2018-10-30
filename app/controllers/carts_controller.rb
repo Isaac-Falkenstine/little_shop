@@ -18,4 +18,9 @@ class CartsController < ApplicationController
       Item.find(item_id).price * quantity
     end.sum
   end
+
+  def destroy
+    @cart.contents.clear
+    redirect_to carts_path
+  end
 end
