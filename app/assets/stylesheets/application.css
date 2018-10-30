@@ -51,13 +51,12 @@ hr         { width: 100%;
              background-size: cover;
             }
 
-.smallthings {font-size: .9em;
-              float: none;
-              display: table-cell;
-              vertical-align: top;}
+.usernail   { width: 170px;
+             height: 110px;
+             background-image: url("pubcrowd.jpeg");
+             background-size: cover;
+            }
 
-.boxed     { border: 1px solid cyan;
-             color: white}
 
 .login_beer   { width: 180px;
             height: 180px;
@@ -82,3 +81,11 @@ hr         { width: 100%;
            background-image: url("Atom.gif");
            background-size: cover;
           }
+
+.smallthings {font-size: .9em;
+              float: none;
+              display: table-cell;
+              vertical-align: top;}
+
+.boxed     { border: 1px solid cyan;
+             color: white}
