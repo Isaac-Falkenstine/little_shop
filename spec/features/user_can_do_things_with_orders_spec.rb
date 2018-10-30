@@ -24,12 +24,12 @@ RSpec.describe 'user visits order show page' do
     order_5 = user_3.orders.create!(total: 20, status: :complete)
 
     visit carts_path
+
     expect(page).to have_content("Check Out")
 
     click_on "Check Out"
 
     expect(current_path).to eq(profile_orders_path)
-
 
   end
 end

@@ -12,7 +12,6 @@ RSpec.describe 'basic cart function' do
       click_on "Add To Cart"
     end
 
-
     within "#item-#{item_1.id}" do
       click_on "Add To Cart"
 
