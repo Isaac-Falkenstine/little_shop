@@ -7,7 +7,7 @@
 <img src=<%= @item.thumbnail %>>
 <ul>
   <li><strong>Description: </strong><%= @item.description %></li>
-  <li><strong>Merchant Name: </strong><%= @item.find_merchant_for_item %></li>
+  <li><strong>Merchant Name: </strong><%= @item.user.first_name %> <%= @item.user.last_name %></li>
   <li><strong>Inventory: </strong><%= @item.inventory %></li>
 
   <li><strong>Price: $</strong><%= @item.price %></li>

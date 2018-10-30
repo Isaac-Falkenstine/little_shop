@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20181024004651) do
     t.integer "inventory"
     t.string "description"
     t.bigint "user_id"
-    t.boolean "enabled", default: false
+    t.boolean "enabled", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_items_on_user_id"
