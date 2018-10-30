@@ -7,6 +7,7 @@ describe 'user sees enabled items on items page' do
 
     visit items_path
     expect(item_1.enabled).to eq(false)
+    save_and_open_page
     expect(page).to_not have_content(item_1.name)
     expect(page).to have_content(item_2.name)
   end
