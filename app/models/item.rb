@@ -20,4 +20,5 @@ class Item < ApplicationRecord
     merchant = User.where(id: self.user_id).first
     "#{merchant.first_name} #{merchant.last_name}"
   end
+
 end
