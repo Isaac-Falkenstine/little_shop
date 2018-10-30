@@ -1,11 +1,11 @@
 require 'rails_helper'
-#must change the path into the actual welcome page
+
 describe 'login process' do
   describe 'can login as registered user' do
     it 'should succeed' do
       user = create(:user)
 
-      visit items_path
+      visit root_path
 
       click_on 'Login'
 
