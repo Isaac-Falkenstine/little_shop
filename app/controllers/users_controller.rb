@@ -59,6 +59,18 @@ class UsersController < ApplicationController
     end
   end
 
+  def upgrade
+    user = User.find(params[:id])
+    if current_user.admin?
+      user.upgrade_account(params[:dir])
+      flash[:notice] = "User #{(params[:id])} has been upgraded" if (params[:dir] == "up")
+      flash[:notice] = "User #{(params[:id])} has been downgraded" if (params[:dir] == "down")
+      redirect_to users_path
+    else
+      redirect_to :back
+    end
+  end
+
   private
 
   def user_params

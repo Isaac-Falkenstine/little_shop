@@ -7,9 +7,10 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   put "/disable", to: "users#disable"
   put "/enable", to: "users#enable"
+  put "/upgrade", to: "users#upgrade"
   put "/disableitem", to: "items#disable"
   put "/enableitem", to: "items#enable"
-  get "/profile/orders", to: "orders#index" 
+  get "/profile/orders", to: "orders#index"
   get '/carts', to: 'carts#index'
   get '/cart', to: 'carts#index'
   delete '/cart', to: 'carts#destroy'
@@ -23,7 +24,7 @@ Rails.application.routes.draw do
     root to: "items#index"
     resources :items
   end
-  
+
   resources :orders
   resources :welcome, only: [:index]
   resources :items
