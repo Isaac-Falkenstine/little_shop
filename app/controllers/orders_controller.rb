@@ -1,12 +1,12 @@
 class OrdersController < ApplicationController
   def index
   
-     @order = Order.where(params[:id])
+     @orders = Order.where(params[:id])
     
   end
 
   def new
-     @orders = Order.new
+     @order = Order.new
   end
 
  def create

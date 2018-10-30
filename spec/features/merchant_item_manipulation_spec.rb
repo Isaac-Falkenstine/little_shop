@@ -33,7 +33,6 @@ feature "when a merchant user is logged in" do
     click_on 'Create Item'
 
     expect(current_path).to eq(dashboard_items_path)
-    # save_and_open_page
     expect(page).to have_content "Jeep"
   end
 

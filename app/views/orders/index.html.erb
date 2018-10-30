@@ -1,0 +1,28 @@
+<div class="jumbotron">
+  <div class="container">
+    <div class="col-md-8">
+      <h1>Your Orders</h1>
+      <p>Delivery is always free. Because elves love making you happy.</p>
+    </div>
+    <div class="col-md-4">
+      <div class="bignail"></div>
+    </div>
+    <hr>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="smallthings">
+      <% @orders.each do |order| %>
+        <div class="col-lg-4 d-flex align-items-stretch" id="order-<%=order.id%>">
+          <a href='<%= order_path(order) %>'><b><%= order.id %></b></a><br />
+          Created at: <%= order.created_at %><br />
+          Updated: <%= order.updated_at %><br />
+          Status: <%= order.status %><br />
+          <br />
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>

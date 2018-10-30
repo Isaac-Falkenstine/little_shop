@@ -5,5 +5,5 @@ class Order < ApplicationRecord
   has_many :items, through: :order_items
   belongs_to :user
 
-  
+  enum status: [:pending, :cancelled, :complete]
 end
