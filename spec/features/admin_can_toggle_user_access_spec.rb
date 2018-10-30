@@ -69,7 +69,7 @@ describe "when youre a merchant or admin" do
       click_on "Upgrade"
     end
     expect(page).to have_content("User #{@default_user.id} has been upgraded")
-    expect(@default_user.role).to equal(:merchant)
+    expect(User.find(@default_user.id).role).to eq("merchant")
 
   end
 
