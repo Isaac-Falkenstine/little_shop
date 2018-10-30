@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'basic cart function' do
-  it 'can add items to cart' do
+  it 'can add items to cart and see those items' do
     merchant_1 = create(:merchant)
     item_1 = create(:item, user_id: merchant_1.id)
     item_2 = create(:item, user_id: merchant_1.id)
@@ -34,7 +34,7 @@ RSpec.describe 'basic cart function' do
     expect(page).to have_content("1") #Price for a item
     expect(page).to have_content("Total price for item: 3") #Total price for a item
     expect(page).to have_content("Amount in cart: 3") #Amount of a item in cart
-    expect(page).to have_content("Total Cost: 5") #Total for everyhting in cart
+    expect(page).to have_content("Total Cost for Cart: 5") #Total for everyhting in cart
 
     # save_and_open_page
   end
