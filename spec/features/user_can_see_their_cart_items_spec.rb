@@ -26,7 +26,7 @@ RSpec.describe 'basic cart function' do
     end
 
     click_on "Cart Items"
-    expect(current_path).to eq("/carts")
+    expect(current_path).to eq("/cart")
 
     expect(page).to have_content("#{item_1.name}")
     expect(page).to have_content("Item price: $#{item_1.price}")
@@ -61,10 +61,10 @@ RSpec.describe 'basic cart function' do
     end
 
     click_on "Cart Items"
-    expect(current_path).to eq("/carts")
+    expect(current_path).to eq("/cart")
 
     click_on "Empty Cart"
-    expect(current_path).to eq("/carts")
+    expect(current_path).to eq("/cart")
 
     expect(page).to_not have_content("#{item_1.name}")
     expect(page).to have_content("Cart Items: 0")
