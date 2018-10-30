@@ -5,10 +5,13 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+
   put "/disable", to: "users#disable"
   put "/enable", to: "users#enable"
+
   put "/disableitem", to: "items#disable"
   put "/enableitem", to: "items#enable"
+
   get '/cart', to: 'carts#index'
 
 
