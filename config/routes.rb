@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   put "/enable", to: "users#enable"
   put "/disableitem", to: "items#disable"
   put "/enableitem", to: "items#enable"
-
+  get "/profile/orders", to: "orders#index" 
 
   namespace :dashboard do
     root to: "users#index"
