@@ -6,6 +6,8 @@ FactoryBot.define do
     sequence(:description) {|n| "description #{n}"}
     sequence(:enabled) {|n| "enabled #{n}"}
     sequence(:price) {|n| "#{n}" }
+    sequence(:created_at) {|n|}
+    sequence(:updated_at) {|n|}
   end
 
 end

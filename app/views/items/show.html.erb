@@ -1,0 +1,20 @@
+<div class="jumbotron">
+  <div class="container">
+    <div class="col-md-8">
+<h1><%= @item.name %> </h1>
+
+
+<img src=<%= @item.thumbnail %>>
+<ul>
+  <li><strong>Description: </strong><%= @item.description %></li>
+  <li><strong>Merchant Name: </strong><%= @item.find_merchant_for_item %></li>
+  <li><strong>Inventory: </strong><%= @item.inventory %></li>
+
+  <li><strong>Price: $</strong><%= @item.price %></li>
+</ul>
+<%= button_to "Add to Cart", carts_path(item_id: @item.id) %>
+
+      </div>
+    <div class="col-md-4">
+  </div>
+</div>
