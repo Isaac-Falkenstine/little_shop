@@ -20,4 +20,12 @@ class Cart
   def count_of(item_id)
     @contents[item_id.to_s].to_i
   end
+
+  def subtract_item(item_id)
+    if @contents[item_id.to_s] != nil
+      @contents[item_id.to_s] -= 1
+    else
+      @contents[item_id.to_s] = 0
+    end
+  end
 end

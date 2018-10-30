@@ -72,7 +72,7 @@ RSpec.describe 'basic cart function' do
 
   it 'can add and subtract items from cart' do
     merchant_1 = create(:merchant)
-    item_1 = create(:item, user_id: merchant_1.id)
+    item_1 = create(:item, user_id: merchant_1.id, inventory: 80)
 
     visit items_path
 
@@ -89,5 +89,36 @@ RSpec.describe 'basic cart function' do
     expect(page).to have_content("Amount in cart: 1")
 
     expect(current_path).to eq("/cart")
+  end
+
+  it 'can add and subtract items from cart with restrictions' do
+    merchant_1 = create(:merchant)
+    item_1 = create(:item, user_id: merchant_1.id, inventory: 30)
+    item_2 = create(:item, user_id: merchant_1.id, inventory: 1)
+
+
+    visit items_path
+
+    within "#item-#{item_1.id}" do
+      click_on "Add To Cart"
+    end
+
+    within "#item-#{item_2.id}" do
+      click_on "Add To Cart"
+    end
+
+    click_on "Cart Items"
+
+    within "#item-#{item_1.id}" do
+      click_on "Take One Out Of Your Cart"
+    end
+
+    expect(page).to_not have_content("Item price: $1")
+
+    # click_on "Add Another To Your Cart"
+    #
+    # expect(page).to have_content("Amount in cart: 1")
+    #
+    # expect(current_path).to eq("/cart")
   end
 end

@@ -26,13 +26,13 @@ class CartsController < ApplicationController
     @cart.contents.clear
     redirect_to cart_path
   end
-
-  def subtract_item # Not working (I think)
+  # add item @cart.contents[params[:id]]
+  def subtract_item
     item = Item.find(params[:id])
-    if @cart.contents[item.id.to_s] != nil
-      @cart.contents[item.id.to_s] -= 1
+    if @cart.contents[params[:id]] == 1
+      @cart.contents.except!(params[:id])
     else
-      @cart.contents[item.id.to_s] = 0
+      @cart.subtract_item(item.id)
     end
     redirect_to cart_path
   end
