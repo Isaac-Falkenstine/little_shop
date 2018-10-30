@@ -4,7 +4,6 @@ class CartsController < ApplicationController
     @cart.add_item(item.id)
     session[:cart] = @cart.contents
 
-
     quantity = @cart.count_of(item.id)
     flash[:notice] = "You Have #{quantity} #{item.name}s In Your Cart"
     if params[:path] == nil
@@ -25,6 +24,16 @@ class CartsController < ApplicationController
 
   def destroy
     @cart.contents.clear
+    redirect_to cart_path
+  end
+
+  def subtract_item # Not working (I think)
+    item = Item.find(params[:id])
+    if @cart.contents[item.id.to_s] != nil
+      @cart.contents[item.id.to_s] -= 1
+    else
+      @cart.contents[item.id.to_s] = 0
+    end
     redirect_to cart_path
   end
 end

@@ -9,11 +9,11 @@ Rails.application.routes.draw do
   put "/enable", to: "users#enable"
   put "/disableitem", to: "items#disable"
   put "/enableitem", to: "items#enable"
-  get "/profile/orders", to: "orders#index" 
+  get "/profile/orders", to: "orders#index"
   get '/carts', to: 'carts#index'
   get '/cart', to: 'carts#index'
   delete '/cart', to: 'carts#destroy'
-
+  post 'cart/:id/subtract', to: 'carts#subtract_item'
 
 
   namespace :dashboard do
@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     root to: "items#index"
     resources :items
   end
-  
+
   resources :orders
   resources :welcome, only: [:index]
   resources :items

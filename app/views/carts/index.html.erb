@@ -19,7 +19,7 @@
         Total price for item: $<%= (@cart.count_of(item.id) * item.price) %><br/>
         Merchant: <%= item.user.first_name %> <%= item.user.last_name %><br/>
         <%= button_to 'Add Another To Your Cart', carts_path(item_id: item.id, path: cart_path)%><br />
-        <%= button_to 'Take One Out Of Your Cart', carts_path(item_id: item.id)%><br />
+        <%= button_to 'Take One Out Of Your Cart', "/cart/#{item.id}/subtract"%><br />
         <br/>
         <br/>
       </div>
