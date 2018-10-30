@@ -12,7 +12,7 @@ class Cart
   def add_item(item_id)
     if @contents[item_id.to_s] != nil
       @contents[item_id.to_s] += 1
-    else 
+    else
       @contents[item_id.to_s] = 1
     end
   end
