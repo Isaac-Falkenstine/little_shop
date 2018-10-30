@@ -12,12 +12,18 @@ class Cart
   def add_item(item_id)
     if @contents[item_id.to_s] != nil
       @contents[item_id.to_s] += 1
-    else 
+    else
       @contents[item_id.to_s] = 1
     end
   end
 
   def count_of(item_id)
     @contents[item_id.to_s].to_i
+  end
+
+  def total_price
+    items_price_array = self.contents.map do |item_id, quantity|
+      Item.find(item_id).price * quantity
+    end.sum
   end
 end

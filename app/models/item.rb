@@ -16,4 +16,8 @@ class Item < ApplicationRecord
     lazurus.save
   end
 
+  def find_merchant_for_item
+    merchant = User.where(id: self.user_id).first
+    "#{merchant.first_name} #{merchant.last_name}"
+  end
 end

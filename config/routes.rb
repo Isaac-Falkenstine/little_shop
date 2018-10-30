@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   put "/enable", to: "users#enable"
   put "/disableitem", to: "items#disable"
   put "/enableitem", to: "items#enable"
+  get '/cart', to: 'carts#index'
+
 
 
   namespace :dashboard do
