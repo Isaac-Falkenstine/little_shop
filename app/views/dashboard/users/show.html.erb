@@ -4,6 +4,8 @@
       <h3>Welcome, <%= "#{@user.first_name} To Your #{@user.role} Dashboard" %></h3>
       <% if @user.role == "merchant" %>
         <p><a class="btn btn-primary btn-lg" href="/dashboard/items"<%= @user.id %>/items" role="button">Your Items</a>
+          <%= link_to 'Your Items', dashboard_items_path(:id => @user.id),  method: :get, class: "btn btn-primary btn-xs" %><br />
       <% end %>
+
     </div>
   </div>
