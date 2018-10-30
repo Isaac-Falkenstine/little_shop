@@ -56,5 +56,22 @@ describe "when youre a merchant or admin" do
 
   end
 
+  it "upgrades a user" do
+
+    visit '/'
+    click_on 'Login'
+    fill_in :email_address, with: @admin_user.email_address
+    fill_in :password, with: @admin_user.password
+    click_on 'Login To The Pub'
+    click_on "Account"
+    click_on "Users"
+    within "#user-#{@default_user.id}" do
+      click_on "Upgrade"
+    end
+    expect(page).to have_content("User #{@default_user.id} has been upgraded")
+    expect(@default_user.role).to equal(:merchant)
+
+  end
+
 
 end
