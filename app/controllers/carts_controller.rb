@@ -21,6 +21,6 @@ class CartsController < ApplicationController
 
   def destroy
     @cart.contents.clear
-    redirect_to carts_path
+    redirect_to cart_path
   end
 end

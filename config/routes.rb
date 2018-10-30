@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   put "/enable", to: "users#enable"
   put "/disableitem", to: "items#disable"
   put "/enableitem", to: "items#enable"
-  get '/carts', to: 'carts#index'
-  delete '/carts', to: 'carts#destroy'
+  get '/cart', to: 'carts#index'
+  delete '/cart', to: 'carts#destroy'
 
 
 
