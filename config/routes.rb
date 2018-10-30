@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   put "/disableitem", to: "items#disable"
   put "/enableitem", to: "items#enable"
   get "/profile/orders", to: "orders#index" 
+  get '/cart', to: 'carts#index'
+
+
+>>>>>>> 42f27dc1a038444dd3e781a9ad7832bebdfa1010
 
   namespace :dashboard do
     root to: "users#index"
