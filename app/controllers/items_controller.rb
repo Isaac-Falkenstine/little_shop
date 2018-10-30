@@ -26,7 +26,6 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    # @reviews = @book.reviews
   end
 
   def update
