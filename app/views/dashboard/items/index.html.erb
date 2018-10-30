@@ -15,9 +15,11 @@
       <div class="smallthings">
         <% @items.each do |item| %>
       	<div class="col-lg-4 d-flex align-items-stretch" id="item-<%=item.id%>">
-          <p><%= item.name %></p>
-          Price: <%= item.price %><br />
-          Item description: <%= item.description %><br />
+          <h3><%= item.name %></h3>
+          Description: <%= item.description %><br />
+          <img src="<%=item.thumbnail%>" class="thumbnail">
+          Price: $<%= item.price %><br />
+          <%= item.inventory %> in stock<br />
           <%= link_to "Edit Item", edit_item_path(item), method: :get %><br />
           <% if item.enabled == true %>
           <b>Enabled
@@ -28,6 +30,7 @@
           <%= link_to 'Enable', enableitem_path(:id => item.id), method: :put, class: "btn btn-primary btn-xs" %>
           <br />
           <% end %>
+          <br />
         </div>
         <% end %>
       </div>
