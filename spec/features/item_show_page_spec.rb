@@ -15,7 +15,8 @@ describe 'user sees can go into an item show page' do
   end
 
   it 'can add item to cart' do
-    item_1 = create(:item)
+    merchant_1 = create(:merchant)
+    item_1 = create(:item, user_id: merchant_1.id)
 
     visit items_path(item_1)
 

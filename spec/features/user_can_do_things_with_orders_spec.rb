@@ -2,7 +2,7 @@ require 'rails_helper'
 
 
 RSpec.describe 'user visits order show page' do
-  it 'sees a list of orders for specific orders' do
+  xit 'sees a list of orders for specific orders' do
     admin = create(:admin)
     merchant = create(:merchant)
     user_1 = create(:user)

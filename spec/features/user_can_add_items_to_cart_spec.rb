@@ -1,18 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe 'basic cart function' do
-  it 'can add itemns to cart' do
-    item_1 = create(:item)
-    item_2 = create(:item)
-    
+  it 'can add items to cart' do
+    merchant = create(:merchant)
+    item_1 = create(:item, user_id: merchant.id)
+    item_2 = create(:item, user_id: merchant.id)
+
     visit items_path
-    
+
     expect(page).to have_content('Cart Items: 0')
     within "#item-#{item_1.id}" do
       click_on "Add To Cart"
     end
     expect(page).to have_content('Cart Items: 1')
-   
+
     within "#item-#{item_1.id}" do
       click_on "Add To Cart"
 
