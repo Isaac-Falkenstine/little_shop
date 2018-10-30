@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   put "/enable", to: "users#enable"
   put "/disableitem", to: "items#disable"
   put "/enableitem", to: "items#enable"
+  get '/cart', to: 'carts#index'
+
+
 
   namespace :dashboard do
     root to: "users#index"
@@ -21,4 +24,6 @@ Rails.application.routes.draw do
   resources :welcome, only: [:index]
   resources :items
   resources :users, except: [:destroy]
+
+  resources :carts, only: [:create]
 end

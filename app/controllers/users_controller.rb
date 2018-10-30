@@ -42,6 +42,7 @@ class UsersController < ApplicationController
     if current_user.admin?
       user.disable_account
       redirect_to users_path
+      flash[:notice] = "User account has been disabled"
     else
       redirect_to :back
     end
@@ -52,6 +53,7 @@ class UsersController < ApplicationController
     if current_user.admin?
       user.enable_account
       redirect_to users_path
+      flash[:notice] = "User account has been enabled"
     else
       redirect_to :back
     end

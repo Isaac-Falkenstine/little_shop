@@ -1,11 +1,7 @@
 class ItemsController < ApplicationController
 
   def index
-    @items = Item.all
-  end
-
-  def new
-    @item = Item.new
+    @items = Item.where(enabled: true)
   end
 
   def create

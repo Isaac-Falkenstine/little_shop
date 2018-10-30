@@ -14,12 +14,14 @@
     <div class="row">
       <div class="smallthings">
       <% @items.each do |item| %>
-        <div class="col-lg-4 d-flex align-items-stretch">
+        <div class="col-lg-4 d-flex align-items-stretch" id="item-<%=item.id%>">
           <a href='<%= item_path(item) %>'><b><%= item.name %></b></a><br />
           Description: <%= item.description %><br />
           Price: $<%= item.price %><br />
           We have <%= item.inventory %> in stock<br />
-          <img src="<%=item.thumbnail%>" class="thumbnail"><br />
+          <a href='<%= item_path(item) %>'><img src="<%=item.thumbnail%>" class="thumbnail"></a>
+          <%= button_to 'Add To Cart', carts_path(item_id: item.id)%><br />
+          <br />
         </div>
       <% end %>
       </div>

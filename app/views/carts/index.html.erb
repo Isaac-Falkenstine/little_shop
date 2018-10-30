@@ -1,0 +1,28 @@
+<div class="jumbotron">
+  <div class="container">
+    <div class="col-md-8">
+      <h1> Your Cart Items </h1>
+    </div>
+    <hr>
+  </div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="smallthings">
+      <% @items.each do |item| %>
+        <div class="col-lg-4 d-flex align-items-stretch" id="item-<%=item.id%>">
+        <img src="<%=item.thumbnail%>" class="thumbnail"><br />
+        <p><%= item.name %></p>
+        Item price: $<%= item.price %><br/>
+        Amount in cart: <%= @cart.count_of(item.id) %><br/>
+        Total price for item: $<%= (@cart.count_of(item.id) * item.price) %><br/>
+        Merchant: <%= item.find_merchant_for_item %><br/>
+        <br/>
+        <br/>
+      </div>
+      <% end %>
+      <h4>Total Cost for Cart: $<%= @total_price %><br/></h4>
+    </div>
+  </div>
+</div>

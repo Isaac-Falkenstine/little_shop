@@ -72,7 +72,7 @@ Next to the shopping cart link I see a count of the items in my cart
 ```
 
 ```
-2. [ ] done
+2. [x] done
 
 As a registered user
 I see the same links as a visitor
@@ -86,7 +86,7 @@ I also see text that says "Logged in as Ian Douglas" (or whatever my name is)
 ```
 
 ```
-3. [ ] done
+3. [x] done
 
 As a merchant user
 I see the same links as a registered user
@@ -95,7 +95,7 @@ Plus the following links
 ```
 
 ```
-4. [ ] done
+4. [x] done
 
 As an admin user
 I see the same links as a registered user
@@ -107,7 +107,7 @@ Plus the following links
 ### "User" CRUD
 
 ```
-5. [ ] done
+5. [x] done
 
 As a visitor
 When I click on the 'register' link in the nav bar
@@ -130,7 +130,7 @@ I see a flash message indicating that I am now registered and logged in
 ```
 
 ```
-6. [ ] done
+6. [x] done
 
 As a visitor
 When I visit the user registration page
@@ -155,7 +155,7 @@ Then I also see a link to my orders page ("/orders")
 ```
 
 ```
-8. [ ] done
+8. [x] done
 
 As a registered user, merchant, or admin
 When I visit my profile page
@@ -172,7 +172,7 @@ And I see my updated information
 ```
 
 ```
-9. [ ] done
+9. [x] done
 
 As a registered user, merchant, or admin
 When I attempt to edit my profile data
@@ -185,7 +185,7 @@ And I see a flash message telling me that email address is already in use
 ```
 
 ```
-10. [ ] done
+10. [x] done
 
 As an admin user
 When I visit the user index page ("/users")
@@ -196,7 +196,7 @@ I see an "enable" button next to any users whose accounts are disabled
 ```
 
 ```
-11. [ ] done
+11. [x] done
 
 As an admin user
 When I visit the user index page
@@ -208,7 +208,7 @@ This user cannot log in
 ```
 
 ```
-12. [ ] done
+12. [x] done
 
 As an admin user
 When I visit the user index page
@@ -220,7 +220,7 @@ This user can now log in
 ```
 
 ```
-13. [ ] done
+13. [x] done
 
 As an admin user
 When I visit the user index page
@@ -233,7 +233,7 @@ And I see a link to edit their profile data
 ```
 
 ```
-14. [ ] done
+14. [x] done
 
 As an admin user
 When I visit a user's profile page ("/users/5")
@@ -256,7 +256,7 @@ And I only see that user's orders
 ### "Session" CRUD
 
 ```
-16. [ ] done
+16. [x] done
 
 As a visitor
 When I visit the login path
@@ -268,15 +268,6 @@ And I see a flash message that I am logged in
 
 ```
 17. [ ] done
-
-As a registered user, merchant, or admin
-When I visit the login path
-I am redirected to my profile page
-And I see a flash message that tells me I am already logged in
-```
-
-```
-18. [ ] done
 
 As a registered user, merchant, or admin
 When I visit the login path
@@ -384,7 +375,7 @@ When I visit a user's profile page ("/users/5")
 I see a link to "upgrade" the user's account to become a merchant
 When I click on that link
 I am redirected to ("/merchants/5") because the user is now a merchant
-And I see a flash message indicating the user has been upgradeded
+And I see a flash message indicating the user has been upgraded
 The next time this user logs in they are now a merchant
 ```
 
@@ -396,7 +387,7 @@ When I visit a merchant's profile page ("/merchants/6")
 I see a link to "downgrade" the user's account to become a regular user
 When I click on that link
 I am redirected to ("/users/6") because the merchant is now a regular user
-And I see a flash message indicating the user has been upgradeded
+And I see a flash message indicating the user has been upgraded
 The next time this user logs in they are now a merchant
 ```
 
@@ -412,7 +403,7 @@ then I am redirected to "/merchants/7" and see their merchant dashboard page
 ```
 
 ```
-30. [ ] done
+* 30. [ ] done *
 
 As an admin user
 If I visit a profile page for a merchant, but that merchant is a regular user
@@ -425,7 +416,7 @@ then I am redirected to "/users/8" and see their user profile page
 ### "Items" CRUD
 
 ```
-31. [ ] done
+31. [x] done
 
 As a merchant
 When I visit my dashboard page ("/dashboard")
@@ -452,7 +443,7 @@ If the item is disabled, I see a button or link to enable the item
 ```
 
 ```
-33. [ ] done
+33. [x] done
 
 As a merchant
 When I visit my items page
@@ -463,7 +454,7 @@ I see the item is now disabled
 ```
 
 ```
-34. [ ] done
+34. [x] done
 
 As a merchant
 When I visit my items page
@@ -494,7 +485,7 @@ If I left the image field blank, I see a placeholder image for the thumbnail
 ```
 
 ```
-36. [ ] done
+36. [x] done
 
 As a merchant
 When I try to add a new item
@@ -525,7 +516,7 @@ If I left the image field blank, I see a placeholder image for the thumbnail
 ```
 
 ```
-38. [ ] done
+38. [x] done
 
 As a merchant
 When I try to edit an existing item
