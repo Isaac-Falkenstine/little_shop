@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get "/profile/orders", to: "orders#index" 
   get '/carts', to: 'carts#index'
   get '/cart', to: 'carts#index'
+  delete '/cart', to: 'carts#destroy'
+
 
 
   namespace :dashboard do
