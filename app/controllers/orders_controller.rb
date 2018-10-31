@@ -1,8 +1,6 @@
 class OrdersController < ApplicationController
-  def index
-  
-     @orders = Order.where(params[:id])
-    
+  def index  
+     @orders = current_user.orders
   end
 
   def new
@@ -14,7 +12,8 @@ class OrdersController < ApplicationController
 
     session[:cart].each do |key, value|
       item = Item.find(key.to_i)
-      OrderItem.create(order_id: order.id, item_id: key.to_i, item_quantity: value, item_price: item.price)
+      # OrderItem.create(order_id: order.id, item_id: key.to_i, item_quantity: value, item_price: item.price)
+      item_something.orders.create()
     end
     redirect_to profile_orders_path(current_user)
   end

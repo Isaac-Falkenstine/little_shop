@@ -108,18 +108,20 @@ it "they can navigate to adding an item" do
       click_on 'Login To The Pub'
       click_on 'Dashboard'
       click_on 'Your Items'
-      expect(page).to_not have_content("Enabled")
-      within "#item-#{@item_1.id}" do
-        click_on 'Enable'
-      end
-      expect(page).to have_content("Item is now available for sale")
-      expect(page).to have_content("Enabled")
-
+      expect(page).to_not have_content("DISABLED")
       within "#item-#{@item_1.id}" do
         click_on 'Disable'
       end
       expect(page).to have_content("Item is no longer for sale")
-      expect(page).to_not have_content("Enabled")
+
+      expect(page).to have_content("DISABLED")
+
+      within "#item-#{@item_1.id}" do
+        click_on 'Enable'
+      end
+
+      expect(page).to have_content("Item is now available for sale")
+      expect(page).to_not have_content("DISABLED")
 
     end
 

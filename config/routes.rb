@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   put "/enable", to: "users#enable"
   put "/disableitem", to: "items#disable"
   put "/enableitem", to: "items#enable"
-  get "/profile/orders", to: "orders#index" 
-  get '/carts', to: 'carts#index'
+  get "/profile/orders", to: "orders#create" 
   get '/cart', to: 'carts#index'
+  post '/cart', to: 'carts#create'
   delete '/cart', to: 'carts#destroy'
 
 
@@ -23,7 +23,8 @@ Rails.application.routes.draw do
     root to: "items#index"
     resources :items
   end
-  
+   
+
   resources :orders
   resources :welcome, only: [:index]
   resources :items

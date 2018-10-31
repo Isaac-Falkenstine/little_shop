@@ -17,14 +17,13 @@
         Item price: $<%= item.price %><br/>
         Amount in cart: <%= @cart.count_of(item.id) %><br/>
         Total price for item: $<%= (@cart.count_of(item.id) * item.price) %><br/>
-        Merchant: <%= item.find_merchant_for_item %><br/>
+        Merchant: <%= item.user.first_name %> <%= item.user.last_name %><br/>
         <br/>
         <br/>
       </div>
       <% end %>
       <h4>Total Cost for Cart: $<%= @total_price %><br/></h4>
-      <br>
-      <%= link_to 'Check Out', profile_orders_path, method: :get, class: "btn btn-primary btn-xs" %>
+      <%= link_to 'Check Out', profile_orders_path, method: :create, class: "btn btn-primary btn-xs" %>
       <%= button_to 'Empty Cart', cart_path, method: :delete %><br />
     </div>
   </div>
