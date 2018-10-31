@@ -89,6 +89,6 @@ feature "when a merchant user is logged in" do
 
     expect(current_path).to eq(dashboard_items_path)
 
-    expect(page).to have_content "Item name: Jeep"
+    expect(page).to have_content "Jeep"
   end
 end
