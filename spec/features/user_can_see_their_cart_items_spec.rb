@@ -70,7 +70,7 @@ RSpec.describe 'basic cart function' do
     expect(page).to have_content("Cart Items: 0")
   end
 
-  it 'can add items from cart' do
+  xit 'can add items from cart' do
     merchant_1 = create(:merchant)
     item_1 = create(:item, user_id: merchant_1.id, inventory: 80)
 
