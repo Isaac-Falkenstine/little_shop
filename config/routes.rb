@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   put "/disable", to: "users#disable"
   put "/enable", to: "users#enable"
+  put "/upgrade", to: "users#upgrade"
   put "/disableitem", to: "items#disable"
   put "/enableitem", to: "items#enable"
   get "/profile/orders", to: "orders#index"

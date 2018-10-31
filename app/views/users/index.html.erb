@@ -15,7 +15,6 @@
       	<div class="col-lg-4 d-flex align-items-stretch" id="user-<%=user.id%>">
           <a href='<%= user_path(user) %>'><b><%= user.email_address%></b></a><br />
           Name: <%= user.first_name %> <%= user.last_name %><br />
-          Role: <%= user.role %><br />
           <% if user.enabled == true %>
           <b>Enabled
           <%= link_to 'Disable', disable_path(:id => user.id),  method: :put, class: "btn btn-primary btn-xs" %><br />
@@ -25,6 +24,15 @@
           <%= link_to 'Enable', enable_path(:id => user.id), method: :put, class: "btn btn-primary btn-xs" %><br />
           <br />
           <% end %>
+          <b>Role: <%= user.role %>
+          <% if user.role == "default" %>
+          <%= link_to 'Upgrade', upgrade_path(:id => user.id, :dir => "up"),  method: :put, class: "btn btn-primary btn-xs" %><br />
+          <% elsif user.role == "merchant" %>
+          <%= link_to 'Downgrade', upgrade_path(:id => user.id, :dir => "down"), method: :put, class: "btn btn-primary btn-xs" %><br />
+          <% else %>
+          Change status in database
+          <% end %>
+          <br />
         </div>
       <% end %>
     </div>
