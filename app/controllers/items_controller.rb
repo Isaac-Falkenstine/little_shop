@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
       flash[:success] = "Item #{@item.name} has been created and saved"
       redirect_to dashboard_items_path
     else
-      render :new
+      redirect_to new_dashboard_item_path
       flash[:notice] = "Item could not be created!"
     end
   end
