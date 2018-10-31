@@ -25,6 +25,7 @@
       </div>
       <% end %>
       <h4>Total Cost for Cart: $<%= @total_price %><br/></h4>
+      <%= link_to 'Check Out', profile_orders_path, method: :post, class: "btn btn-primary btn-xs" %>
       <%= button_to 'Empty Cart', cart_path, method: :delete %><br />
     </div>
   </div>

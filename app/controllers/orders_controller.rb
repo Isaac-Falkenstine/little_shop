@@ -1,21 +1,20 @@
 class OrdersController < ApplicationController
-  def index
-  
-     @orders = Order.where(params[:id])
-    
+  def index  
+     @orders = current_user.orders
   end
 
   def new
      @order = Order.new
   end
 
- def create
-  @order = Order.new(order_params)
-  if @order.save
-    flash[:notice] = "Order created successfully"
-    redirect_to(:action => 'index')
+  def create
+    @order = Order.create(user_id: session[:user_id])
+    session[:cart].each do |key, value|
+      item = Item.find(key.to_i)
+       OrderItem.create!(order_id: @order.id, item_id: key.to_i, amount: item.price, count: value)
+    end
+    redirect_to profile_orders_path
   end
- end
 
   end
 

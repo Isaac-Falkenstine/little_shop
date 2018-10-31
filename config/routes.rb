@@ -11,8 +11,11 @@ Rails.application.routes.draw do
   put "/disableitem", to: "items#disable"
   put "/enableitem", to: "items#enable"
   get "/profile/orders", to: "orders#index"
+  post "/profile/orders", to: "orders#create"
+
   get '/carts', to: 'carts#index'
   get '/cart', to: 'carts#index'
+  post '/cart', to: 'carts#create'
   delete '/cart', to: 'carts#destroy'
   post 'cart/:id/subtract', to: 'carts#subtract_item'
 
