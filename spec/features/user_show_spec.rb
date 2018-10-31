@@ -2,16 +2,16 @@ require 'rails_helper'
 
 describe 'user show page' do
   it 'user can see their info on their show page' do
-     user = create(:user)
+    user_1 = create(:user)
 
-    visit user_path(User.last)
+    visit user_path(user_1)
 
     expect(page).to have_content("Your personal info:")
-    expect(page).to have_content(user.street_address)
-    expect(page).to have_content(user.state)
-    expect(page).to have_content(user.zip)
-    expect(page).to have_content(user.city)
-    expect(page).to have_content(user.email_address)
+    expect(page).to have_content(user_1.street_address)
+    expect(page).to have_content(user_1.state)
+    expect(page).to have_content(user_1.zip)
+    expect(page).to have_content(user_1.city)
+    expect(page).to have_content(user_1.email_address)
   end
 
   it 'user can edit their info on their show page' do

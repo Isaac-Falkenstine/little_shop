@@ -1,10 +1,15 @@
 class OrdersController < ApplicationController
   def index
-     @orders = current_user.orders
+    if params[:id] == nil
+      @orders = current_user.orders
+    else
+      pawn = User.find(params[:id])
+      @orders = pawn.orders
+    end
   end
 
   def new
-     @order = Order.new
+    @order = Order.new
   end
 
   def create
