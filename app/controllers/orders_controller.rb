@@ -2,9 +2,10 @@ class OrdersController < ApplicationController
   def index
     if params[:id] == nil
       @orders = current_user.orders
+      @pawn = current_user
     else
-      pawn = User.find(params[:id])
-      @orders = pawn.orders
+      @pawn = User.find(params[:id])
+      @orders = @pawn.orders
     end
   end
 

@@ -20,7 +20,7 @@ describe 'When youre an admin user' do
     click_on 'Account'
     click_on 'Users'
     click_on @merchant_1.email_address
-    click_on "See Merchant's Dashboard"
+    click_on "See User's Dashboard"
     click_on "Your Items"
 
     expect(page).to have_content(@item_1.name)
