@@ -18,7 +18,7 @@ describe 'specific merchant statistics are available in Dashboard ' do
     order_1 = user_1.orders.create!(status: 2)
     order_2 = user_1.orders.create!(status: 2)
     order_3 = user_1.orders.create!(status: 2)
-    order_4 = user_2.orders.create!(status: 2)
+    order_4 = user_1.orders.create!(status: 0)
 
     order_item = OrderItem.create!(item_id: item_1.id, order_id: order_1.id, amount: item_1.price, count: 2)
 
@@ -32,7 +32,10 @@ describe 'specific merchant statistics are available in Dashboard ' do
     fill_in :password, with: merchant.password
     click_on 'Login To The Pub'
     visit dashboard_user_path(merchant)
-    save_and_open_page
+
+    expect(page).to have_content("Statistics (Top Sold)")
+    expect(page).to have_content("Sold Items(%) #{merchant.percent_sold}")
+    expect(page).to have_content("Top 3 States: #{merchant.merchant_top_states }")
 
   end
 

@@ -48,44 +48,39 @@ hr         { width: 100%;
 .bignail   { width: 180px;
              height: 180px;
              background-image: url("santa-beer.jpg");
-             background-size: cover;
-            }
+             background-size: cover;}
 
 .usernail   { width: 170px;
              height: 110px;
              background-image: url("pubcrowd.jpeg");
-             background-size: cover;
-            }
-
+             background-size: cover;}
 
 .login_beer   { width: 180px;
             height: 180px;
             background-image: url("beer_login.jpg");
-            background-size: cover;
-           }
+            background-size: cover;}
 
-.welcome_dog   { width: 375px;
+.welcome_dog { width: 375px;
             height: 250px;
             background-image: url("welcome_dog.gif");
-            background-size: cover;
-           }
+            background-size: cover;}
 
-.beer_regi   { width: 350px;
+.beer_regi{ width: 350px;
             height: 350px;
             background-image: url("beer_regi.jpg");
-            background-size: cover;
-           }
+            background-size: cover;}
 
 .cheers   { width: 350px;
            height: 330px;
            background-image: url("Atom.gif");
-           background-size: cover;
-          }
+           background-size: cover; }
 
 .smallthings {font-size: .9em;
               float: none;
               display: table-cell;
-              vertical-align: top;}
+              vertical-align: top; }
 
 .boxed     { border: 1px solid cyan;
              color: white}
+
+.inline { display: flex; }
