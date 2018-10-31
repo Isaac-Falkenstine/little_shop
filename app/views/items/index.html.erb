@@ -20,7 +20,7 @@
           Price: $<%= item.price %><br />
           We have <%= item.inventory %> in stock<br />
           <a href='<%= item_path(item) %>'><img src="<%=item.thumbnail%>" class="thumbnail"></a>
-          <%= button_to 'Add To Cart', carts_path(item_id: item.id)%><br />
+          <%= button_to 'Add To Cart', cart_path(item_id: item.id)%><br />
           <br />
         </div>
       <% end %>
