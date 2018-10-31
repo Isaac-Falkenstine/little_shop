@@ -6,10 +6,8 @@
       Your personal info:
       Address: <%= @user.street_address %>, <%= @user.city %>, <%= @user.state %> <%= @user.zip%>
       email: <%= @user.email_address %><br /><br />
-      <% if @user.role == "merchant" %>
-        <%= link_to "See Merchant's Dashboard", dashboard_user_path(@user), method: :get %><br />
-      <% end %>
       <% if !current_user.nil? && current_user.role == "admin" %>
+        <%= link_to "See User's Dashboard", dashboard_user_path(@user), method: :get %><br />
         <%= link_to "See User's Orders", profile_orders_path(:id => @user.id), method: :get %>
       <% end %>
     </div>
