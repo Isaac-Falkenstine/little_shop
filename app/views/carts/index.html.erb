@@ -3,30 +3,33 @@
     <div class="col-md-8">
       <h1> Your Cart Items </h1>
     </div>
+    <div class="col-md-4">
+      <h4>Total Cost for Cart: $<%= @total_price %></h4>
+      <div class="inline"><%= link_to 'Check Out', profile_orders_path, method: :post, class: "btn btn-primary btn-xs" %>
+      &nbsp; &nbsp;
+      <%= button_to 'Empty Cart', cart_path, method: :delete, class: "btn btn-primary btn-xs" %>
+      </div>
+    </div>
     <hr>
   </div>
 
-
-<div class="container">
-  <div class="row">
-    <div class="smallthings">
-      <% @items.each do |item| %>
-        <div class="col-lg-4 d-flex align-items-stretch" id="item-<%=item.id%>">
-        <img src="<%=item.thumbnail%>" class="thumbnail"><br />
-        <p><%= item.name %></p>
-        Item price: $<%= item.price %><br/>
-        Amount in cart: <%= @cart.count_of(item.id) %><br/>
-        Total price for item: $<%= (@cart.count_of(item.id) * item.price) %><br/>
-        Merchant: <%= item.user.first_name %> <%= item.user.last_name %><br/>
-        <%= button_to 'Add Another To Your Cart', carts_path(item_id: item.id, path: cart_path)%><br />
-        <%= button_to 'Take One Out Of Your Cart', "/cart/#{item.id}/subtract"%><br />
-        <br/>
-        <br/>
+  <div class="container">
+    <div class="row">
+      <div class="smallthings">
+        <% @items.each do |item| %>
+          <div class="col-lg-4 d-flex align-items-stretch" id="item-<%=item.id%>">
+          <b><%= item.name %></b><br />
+          <img src="<%=item.thumbnail%>" class="thumbnail"><br />
+          Item price: $<%= item.price %><br/>
+          Amount in cart: <%= @cart.count_of(item.id) %><br/>
+          Total price for item: $<%= (@cart.count_of(item.id) * item.price) %><br/>
+          Merchant: <%= item.user.first_name %> <%= item.user.last_name %><br/>
+          <%= button_to 'Add Another To Your Cart', carts_path(item_id: item.id, path: cart_path)%><br />
+          <%= button_to 'Take One Out Of Your Cart', "/cart/#{item.id}/subtract"%><br />
+          <br/>
+          </div>
+        <% end %>
       </div>
-      <% end %>
-      <h4>Total Cost for Cart: $<%= @total_price %><br/></h4>
-      <%= link_to 'Check Out', profile_orders_path, method: :post, class: "btn btn-primary btn-xs" %>
-      <%= button_to 'Empty Cart', cart_path, method: :delete %><br />
     </div>
   </div>
 </div>
