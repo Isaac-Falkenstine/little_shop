@@ -48,8 +48,8 @@ user_1 = User.create(
   role: 1
 )
 user_2 = User.create(
-  first_name: "Jefferey",
-  last_name: "Dahmer",
+  first_name: "Regular",
+  last_name: "User",
   street_address: "321 Main Street",
   city: "Milwaukee",
   state: "WI",
