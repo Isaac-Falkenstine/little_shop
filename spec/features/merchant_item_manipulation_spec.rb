@@ -127,7 +127,7 @@ feature "when a merchant user is logged in" do
 
   end
 
-  describe 'they cant add an item/edit item with invalid ' do
+  describe 'they cant add an item/edit item with invalid price' do
     it 'cant add an item with a price of zero' do
       merchant = create(:merchant)
 
@@ -169,7 +169,49 @@ feature "when a merchant user is logged in" do
       click_on 'Update Item'
       expect(page).to have_content("Update Failed! Please make sure no fields are left empty")
     end
-
   end
 
+  describe 'they cant add an item/edit item with invalid inventory' do
+    it 'cant add an item with a inventory less zero' do
+      merchant = create(:merchant)
+
+      visit root_path
+      click_on 'Login'
+      fill_in :email_address, with: merchant.email_address
+      fill_in :password, with: merchant.password
+      click_on 'Login To The Pub'
+      click_on "See Merchant's Dashboard"
+      click_on 'Your Items'
+      click_on 'Add Item'
+
+      fill_in :item_name, with: "Jeep"
+      fill_in :item_description, with: "kick ass off road vehicle!"
+      fill_in :item_thumbnail, with: "https://cimg6.ibsrv.net/gimg/www.jk-forum.com-vbulletin/2000x1333/img_7093_ace7e7a15cab63d32c9fe40f367bdc0baf8ec8b3.jpg"
+      fill_in :item_price, with: 4
+      fill_in :item_inventory, with: -1
+      click_on 'Create Item'
+
+      expect(current_path).to eq(new_dashboard_item_path)
+      expect(page).to have_content("Item could not be created!")
+    end
+
+    it 'cant update an item with a inventory less of zero' do
+      merchant = create(:merchant)
+      item_1 = create(:item, user_id: merchant.id)
+
+      visit root_path
+      click_on 'Login'
+      fill_in :email_address, with: merchant.email_address
+      fill_in :password, with: merchant.password
+      click_on 'Login To The Pub'
+      click_on "See Merchant's Dashboard"
+      click_on 'Your Items'
+      click_on 'Edit Item'
+
+      fill_in :item_price, with: 0
+
+      click_on 'Update Item'
+      expect(page).to have_content("Update Failed! Please make sure no fields are left empty")
+    end
+  end
 end

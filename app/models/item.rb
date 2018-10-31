@@ -2,6 +2,7 @@ class Item < ApplicationRecord
   validates_presence_of :name, :thumbnail, :price, :inventory, :description
 
   validates :price, presence: true, :numericality => { greater_than: 0}
+  validates :inventory, presence: true, :numericality => { greater_than_or_equal_to: 0}
 
   belongs_to :user
   has_many :order_items
