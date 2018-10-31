@@ -136,7 +136,8 @@ feature "when a merchant user is logged in" do
       fill_in :email_address, with: merchant.email_address
       fill_in :password, with: merchant.password
       click_on 'Login To The Pub'
-      click_on "See User's Dashboard"
+      click_on "Account"
+      click_on "Dashboard"
       click_on 'Your Items'
       click_on 'Add Item'
 
@@ -160,7 +161,8 @@ feature "when a merchant user is logged in" do
       fill_in :email_address, with: merchant.email_address
       fill_in :password, with: merchant.password
       click_on 'Login To The Pub'
-      click_on "See User's Dashboard"
+      click_on "Account"
+      click_on "Dashboard"
       click_on 'Your Items'
       click_on 'Edit Item'
 
@@ -180,7 +182,8 @@ feature "when a merchant user is logged in" do
       fill_in :email_address, with: merchant.email_address
       fill_in :password, with: merchant.password
       click_on 'Login To The Pub'
-      click_on "See User's Dashboard"
+      click_on "Account"
+      click_on "Dashboard"
       click_on 'Your Items'
       click_on 'Add Item'
 
@@ -204,7 +207,8 @@ feature "when a merchant user is logged in" do
       fill_in :email_address, with: merchant.email_address
       fill_in :password, with: merchant.password
       click_on 'Login To The Pub'
-      click_on "See User's Dashboard"
+      click_on "Account"
+      click_on "Dashboard"
       click_on 'Your Items'
       click_on 'Edit Item'
 
