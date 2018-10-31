@@ -130,8 +130,6 @@ feature "when a merchant user is logged in" do
   describe 'they cant add an item/edit item with invalid ' do
     it 'cant add an item with a price of zero' do
       merchant = create(:merchant)
-      # item_1 = create(:item, user_id: merchant.id, price: 0)
-      # item_2 = create(:item, user_id: merchant.id)
 
       visit root_path
       click_on 'Login'
@@ -151,6 +149,25 @@ feature "when a merchant user is logged in" do
 
       expect(current_path).to eq(new_dashboard_item_path)
       expect(page).to have_content("Item could not be created!")
+    end
+
+    it 'cant update an item with a price of zero' do
+      merchant = create(:merchant)
+      item_1 = create(:item, user_id: merchant.id)
+
+      visit root_path
+      click_on 'Login'
+      fill_in :email_address, with: merchant.email_address
+      fill_in :password, with: merchant.password
+      click_on 'Login To The Pub'
+      click_on "See Merchant's Dashboard"
+      click_on 'Your Items'
+      click_on 'Edit Item'
+
+      fill_in :item_price, with: 0
+
+      click_on 'Update Item'
+      expect(page).to have_content("Update Failed! Please make sure no fields are left empty")
     end
 
   end
