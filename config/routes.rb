@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get '/carts', to: 'carts#index'
   get '/cart', to: 'carts#index'
   delete '/cart', to: 'carts#destroy'
-
+  post 'cart/:id/subtract', to: 'carts#subtract_item'
 
 
   namespace :dashboard do

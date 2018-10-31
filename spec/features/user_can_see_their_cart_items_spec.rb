@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe 'basic cart function' do
   it 'can add items to cart and see those items' do
     merchant_1 = create(:merchant)
-    item_1 = create(:item, user_id: merchant_1.id)
-    item_2 = create(:item, user_id: merchant_1.id)
+    item_1 = create(:item, user_id: merchant_1.id, inventory: 80)
+    item_2 = create(:item, user_id: merchant_1.id, inventory: 80)
 
     visit items_path
 
@@ -26,7 +26,7 @@ RSpec.describe 'basic cart function' do
     end
 
     click_on "Cart Items"
-    expect(current_path).to eq("/cart")
+    expect(current_path).to eq(cart_path)
 
     expect(page).to have_content("#{item_1.name}")
     expect(page).to have_content("Item price: $#{item_1.price}")
@@ -38,8 +38,8 @@ RSpec.describe 'basic cart function' do
 
   it 'can empty cart' do
     merchant_1 = create(:merchant)
-    item_1 = create(:item, user_id: merchant_1.id)
-    item_2 = create(:item, user_id: merchant_1.id)
+    item_1 = create(:item, user_id: merchant_1.id, inventory: 80)
+    item_2 = create(:item, user_id: merchant_1.id, inventory: 80)
 
     visit items_path
 
@@ -61,13 +61,68 @@ RSpec.describe 'basic cart function' do
     end
 
     click_on "Cart Items"
-    expect(current_path).to eq("/cart")
+    expect(current_path).to eq(cart_path)
 
     click_on "Empty Cart"
-    expect(current_path).to eq("/cart")
+    expect(current_path).to eq(cart_path)
 
     expect(page).to_not have_content("#{item_1.name}")
     expect(page).to have_content("Cart Items: 0")
+  end
 
+  it 'can add and subtract items from cart' do
+    merchant_1 = create(:merchant)
+    item_1 = create(:item, user_id: merchant_1.id, inventory: 80)
+
+    visit items_path
+
+    click_on "Add To Cart"
+    click_on "Cart Items"
+
+    expect(page).to have_content("Amount in cart: 1")
+    click_on "Add Another To Your Cart"
+
+    expect(page).to have_content("Amount in cart: 2")
+
+
+    click_on "Take One Out Of Your Cart"
+    expect(page).to have_content("Amount in cart: 1")
+
+    expect(current_path).to eq(cart_path)
+  end
+
+  it 'can add and subtract items from cart with restrictions' do
+    merchant_1 = create(:merchant)
+    item_1 = create(:item, user_id: merchant_1.id, inventory: 30)
+    item_2 = merchant_1.items.create(name: "Glove", description: "You can catch stuff with it!", price: 20.00, inventory: 1, thumbnail: "img.jpeg")
+
+
+
+    visit items_path
+
+    within "#item-#{item_1.id}" do
+      click_on "Add To Cart"
+    end
+
+    within "#item-#{item_2.id}" do
+      click_on "Add To Cart"
+    end
+
+    click_on "Cart Items"
+
+    within "#item-#{item_1.id}" do
+      click_on "Take One Out Of Your Cart"
+    end
+
+    expect(page).to_not have_content("Item price: $#{item_1.price}")
+
+    within "#item-#{item_2.id}" do
+      click_on "Add Another To Your Cart"
+    end
+    
+    expect(page).to have_content("You already have all the #{item_2.name}s in stock!")
+    expect(page).to have_content("Amount in cart: 1")
+
+    expect(current_path).to eq(cart_path)
   end
 end
