@@ -30,7 +30,7 @@
           <% elsif user.role == "merchant" %>
           <%= link_to 'Downgrade', upgrade_path(:id => user.id, :dir => "down"), method: :put, class: "btn btn-primary btn-xs" %><br />
           <% else %>
-          Change status in database
+          (Change status in database)
           <% end %>
           <br />
         </div>
