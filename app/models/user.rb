@@ -23,4 +23,11 @@ class User < ApplicationRecord
     lazurus.save
   end
 
+  def upgrade_account(dir)
+    pawn = User.find(id)
+    pawn.role = 1 if dir == "up"
+    pawn.role = 0 if dir == "down"
+    pawn.save
+  end
+
 end

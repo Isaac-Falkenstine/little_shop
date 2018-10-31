@@ -7,13 +7,17 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   put "/disable", to: "users#disable"
   put "/enable", to: "users#enable"
+  put "/upgrade", to: "users#upgrade"
   put "/disableitem", to: "items#disable"
   put "/enableitem", to: "items#enable"
-  get "/profile/orders", to: "orders#create" 
+  get "/profile/orders", to: "orders#index"
+  post "/profile/orders", to: "orders#create"
+
+  get '/carts', to: 'carts#index'
   get '/cart', to: 'carts#index'
   post '/cart', to: 'carts#create'
   delete '/cart', to: 'carts#destroy'
-
+  post 'cart/:id/subtract', to: 'carts#subtract_item'
 
 
   namespace :dashboard do
@@ -23,7 +27,6 @@ Rails.application.routes.draw do
     root to: "items#index"
     resources :items
   end
-   
 
   resources :orders
   resources :welcome, only: [:index]

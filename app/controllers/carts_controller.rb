@@ -1,13 +1,18 @@
 class CartsController < ApplicationController
   def create
     item = Item.find(params[:item_id])
-    @cart.add_item(item.id)
-    session[:cart] = @cart.contents
+      if item.inventory == @cart.contents[item.id.to_s]
+        flash[:notice] = "You already have all the #{item.name}s in stock!"
+        redirect_to cart_path
+    else
+      @cart.add_item(item)
+      session[:cart] = @cart.contents
+        quantity = @cart.count_of(item.id)
+        flash[:notice] = "You Have #{quantity} Number Of #{item.name} In Your Cart"
+        redirect_to items_path
+     end
+  end
 
-    quantity = @cart.count_of(item.id)
-    flash[:notice] = "You Have #{quantity} Number Of #{item.name} In Your Cart"
-    redirect_to items_path
-   end
 
    def index
     @items = @cart.contents.keys.map do |item_id|
@@ -20,6 +25,16 @@ class CartsController < ApplicationController
 
   def destroy
     @cart.contents.clear
+    redirect_to cart_path
+  end
+
+  def subtract_item
+    item = Item.find(params[:id])
+    if @cart.contents[params[:id]] == 1
+      @cart.contents.except!(params[:id])
+    else
+      @cart.subtract_item(item.id)
+    end
     redirect_to cart_path
   end
 end

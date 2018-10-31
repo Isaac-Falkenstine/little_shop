@@ -18,12 +18,14 @@
         Amount in cart: <%= @cart.count_of(item.id) %><br/>
         Total price for item: $<%= (@cart.count_of(item.id) * item.price) %><br/>
         Merchant: <%= item.user.first_name %> <%= item.user.last_name %><br/>
+        <%= button_to 'Add Another To Your Cart', carts_path(item_id: item.id, path: cart_path)%><br />
+        <%= button_to 'Take One Out Of Your Cart', "/cart/#{item.id}/subtract"%><br />
         <br/>
         <br/>
       </div>
       <% end %>
       <h4>Total Cost for Cart: $<%= @total_price %><br/></h4>
-      <%= link_to 'Check Out', profile_orders_path, method: :create, class: "btn btn-primary btn-xs" %>
+      <%= link_to 'Check Out', profile_orders_path, method: :post, class: "btn btn-primary btn-xs" %>
       <%= button_to 'Empty Cart', cart_path, method: :delete %><br />
     </div>
   </div>
