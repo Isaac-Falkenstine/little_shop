@@ -36,7 +36,7 @@ feature "when a merchant user is logged in" do
     expect(page).to have_content "Jeep"
   end
 
-it "they can navigate to adding an item" do
+  it "they can navigate to adding an item" do
     merchant = create(:merchant)
 
     visit root_path
@@ -123,6 +123,36 @@ it "they can navigate to adding an item" do
       expect(page).to have_content("Item is now available for sale")
       expect(page).to_not have_content("DISABLED")
 
+    end
+
+  end
+
+  describe 'they cant add an item/edit item with invalid ' do
+    it 'cant add an item with a price of zero' do
+      merchant = create(:merchant)
+      item_1 = create(:item, user_id: merchant.id, price: 0)
+      item_2 = create(:item, user_id: merchant.id)
+
+      # page.driver.post(login_path, email: merchant.email_address, password: merchant.password)
+
+      visit root_path
+      click_on 'Login'
+      fill_in :email_address, with: merchant.email_address
+      fill_in :password, with: merchant.password
+      click_on 'Login To The Pub'
+      click_on "See Merchant's Dashboard"
+      click_on 'Your Items'
+      click_on 'Add Item'
+
+      fill_in :item_name, with: "Jeep"
+      fill_in :item_description, with: "kick ass off road vehicle!"
+      fill_in :item_thumbnail, with: "https://cimg6.ibsrv.net/gimg/www.jk-forum.com-vbulletin/2000x1333/img_7093_ace7e7a15cab63d32c9fe40f367bdc0baf8ec8b3.jpg"
+      fill_in :item_price, with: 0
+      fill_in :item_inventory, with: 55
+      click_on 'Create Item'
+      save_and_open_page
+      expect(page).to have_content("Invalid Price or inventory. Must be greater than 0.  Please try again.")
+      save_and_open_page
     end
 
   end
