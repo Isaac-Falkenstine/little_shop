@@ -10,14 +10,14 @@ class ItemsController < ApplicationController
       session[:item_id] = @item.id
       flash[:success] = "Item #{@item.name} has been created and saved"
       redirect_to dashboard_items_path
-    elsif item_params[:price].to_i <= 0 || item_params[:inventory].to_i <= 0
-      flash[:error] = "Invalid Price or inventory. Must be greater than 0.  Please try again."
- 			render :new
     else
       flash[:notice] = "Item could not be created!"
       render :new
     end
   end
+  # elsif item_params[:price].to_i <= 0 || item_params[:inventory].to_i <= 0
+  #   flash[:error] = "Invalid Price or inventory. Must be greater than 0.  Please try again."
+  #   render :new
 
   def show
     @item = Item.find(params[:id])

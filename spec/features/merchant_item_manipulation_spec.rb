@@ -130,10 +130,8 @@ feature "when a merchant user is logged in" do
   describe 'they cant add an item/edit item with invalid ' do
     it 'cant add an item with a price of zero' do
       merchant = create(:merchant)
-      item_1 = create(:item, user_id: merchant.id, price: 0)
-      item_2 = create(:item, user_id: merchant.id)
-
-      # page.driver.post(login_path, email: merchant.email_address, password: merchant.password)
+      # item_1 = create(:item, user_id: merchant.id, price: 0)
+      # item_2 = create(:item, user_id: merchant.id)
 
       visit root_path
       click_on 'Login'
@@ -150,9 +148,11 @@ feature "when a merchant user is logged in" do
       fill_in :item_price, with: 0
       fill_in :item_inventory, with: 55
       click_on 'Create Item'
+
       save_and_open_page
+
       expect(page).to have_content("Invalid Price or inventory. Must be greater than 0.  Please try again.")
-      save_and_open_page
+      expect(current_path).to eq(new_dashboard_item_path)
     end
 
   end
