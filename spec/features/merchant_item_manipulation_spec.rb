@@ -149,10 +149,8 @@ feature "when a merchant user is logged in" do
       fill_in :item_inventory, with: 55
       click_on 'Create Item'
 
-      save_and_open_page
-
-      expect(page).to have_content("Invalid Price or inventory. Must be greater than 0.  Please try again.")
       expect(current_path).to eq(new_dashboard_item_path)
+      expect(page).to have_content("Item could not be created!")
     end
 
   end

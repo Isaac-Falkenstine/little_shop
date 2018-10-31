@@ -11,10 +11,11 @@ class ItemsController < ApplicationController
       flash[:success] = "Item #{@item.name} has been created and saved"
       redirect_to dashboard_items_path
     else
+      redirect_to new_dashboard_item_path
       flash[:notice] = "Item could not be created!"
-      render :new
     end
   end
+
   # elsif item_params[:price].to_i <= 0 || item_params[:inventory].to_i <= 0
   #   flash[:error] = "Invalid Price or inventory. Must be greater than 0.  Please try again."
   #   render :new
