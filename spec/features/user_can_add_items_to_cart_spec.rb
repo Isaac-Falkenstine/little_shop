@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe 'basic cart function' do
   it 'can add items to cart' do
     merchant = create(:merchant)
-    item_1 = create(:item, user_id: merchant.id)
-    item_2 = create(:item, user_id: merchant.id)
+    item_1 = create(:item, user_id: merchant.id, inventory: 80)
+    item_2 = create(:item, user_id: merchant.id, inventory: 80)
 
     visit items_path
 
