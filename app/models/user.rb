@@ -56,11 +56,14 @@ class User < ApplicationRecord
   end
 
   def has_orders?
-    users = User.where(role: "default").map do |user|
-      x = user.orders.map do |order|
-        order.items.any? {|item| item.user_id == self.id}
+    have_orders = self.items.map do |item|
+      OrderItem.where(item_id: item)
+    end.flatten.empty?
 
-      end
+    if have_orders
+      false
+    else
+      true
     end
   end
 end
