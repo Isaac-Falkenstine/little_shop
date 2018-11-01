@@ -34,6 +34,7 @@ RSpec.describe 'user can see orders' do
     expect(page).to have_content("Total Quantity Of Items: ")
     expect(page).to have_content("Grand Total Of All Items In Cart: ")
     expect(current_path).to eq(profile_orders_path)
+    merchant.percent_sold
   end
 
     describe "User Adds Items To Cart" do

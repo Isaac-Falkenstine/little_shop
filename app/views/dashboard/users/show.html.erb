@@ -5,6 +5,9 @@
       <% if @user.role == "merchant" %>
           <%= link_to 'Your Items', dashboard_items_path(:id => @user.id),  method: :get, class: "btn btn-primary btn-xs" %><br />
       <% end %>
-
+      <p>Statistics:</p>
+      <% binding.pry %>
+      <p> You have sold: <%= @user.percent_sold  %>% of what you have in stock</p>
+      <p> User with most orders from you: <%= @best_user.first_name %> <%= @best_user.last_name %> </p>
     </div>
   </div>
