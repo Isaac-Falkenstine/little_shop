@@ -57,7 +57,7 @@ Disabled content should also be restricted from showing up in the statistics pag
 ### Navigation
 
 ```
-1. [ ] done
+1. [x] done
 
 As a visitor
 I see a navigation bar
@@ -143,7 +143,7 @@ I see a flash message telling me the email address is already in use
 ```
 
 ```
-7. [ ] done
+7. [x] done
 
 As a registered user, merchant, or admin
 When I visit my own profile page
@@ -243,7 +243,7 @@ Except I am returned to the show page path of "/users/5" when I am finished
 ```
 
 ```
-15. [ ] done
+15. [x] done
 
 As an admin user
 When I visit a user's profile page
@@ -267,7 +267,7 @@ And I see a flash message that I am logged in
 ```
 
 ```
-17. [ ] done
+17. [x] done
 
 As a registered user, merchant, or admin
 When I visit the login path
@@ -276,7 +276,7 @@ And I see a flash message that tells me I am already logged in
 ```
 
 ```
-19. [ ] done
+19. [x] done
 
 As a registered user, merchant, or admin
 When I visit the logout path
@@ -298,7 +298,7 @@ Then I also see a link to my merchant orders ("/dashboard/orders")
 ```
 
 ```
-21. [ ] done
+21. [x] done
 
 As an admin user
 When I visit the merchants index page ("/merchants")
@@ -309,7 +309,7 @@ I see an "enable" button next to any merchants whose accounts are disabled
 ```
 
 ```
-22. [ ] done
+22. [x] done
 
 As an admin user
 When I visit the merchant index page
@@ -321,7 +321,7 @@ This merchant cannot log in
 ```
 
 ```
-23. [ ] done
+23. [x] done
 
 As an admin user
 When I visit the merchant index page
@@ -333,7 +333,7 @@ This merchant can now log in
 ```
 
 ```
-24. [ ] done
+24. [x] done
 
 As an admin user
 When I visit the merchant index page
@@ -346,7 +346,7 @@ And I see a link to edit their profile data
 ```
 
 ```
-25. [ ] done
+25. [x] done
 
 As an admin user
 When I visit a merchant's dashboard page ("/merchants/6")
@@ -368,7 +368,7 @@ And I only see the orders containing items from this merchant
 ### "MerchantUsers" CRUD
 
 ```
-27. [ ] done
+27. [x] done
 
 As an admin user
 When I visit a user's profile page ("/users/5")
@@ -380,7 +380,7 @@ The next time this user logs in they are now a merchant
 ```
 
 ```
-28. [ ] done
+28. [x] done
 
 As an admin user
 When I visit a merchant's profile page ("/merchants/6")
@@ -392,7 +392,7 @@ The next time this user logs in they are now a merchant
 ```
 
 ```
-29. [ ] done
+29. [x] done
 
 As an admin user
 If I visit a profile page for a user, but that user is a merchant
@@ -426,7 +426,7 @@ My URI route should be "/dashboard/items"
 ```
 
 ```
-32. [ ] done
+32. [x] done
 
 As a merchant
 When I visit my items page
@@ -465,7 +465,7 @@ I see the item is now enabled
 ```
 
 ```
-35. [ ] done
+35. [x] done
 
 As a merchant
 When I visit my items page
@@ -496,7 +496,7 @@ All fields are re-populated with my previous data
 ```
 
 ```
-37. [ ] done
+37. [x] done
 
 As a merchant
 When I visit my items page
@@ -527,7 +527,7 @@ All fields are re-populated with my previous data
 ```
 
 ```
-39. [ ] done
+39. [x] done
 
 As an admin user
 When I visit a merchant's profile page
@@ -540,7 +540,7 @@ All content rules still apply (eg, item name cannot be blank, etc)
 ```
 
 ```
-40. [ ] done
+40. [x] done
 
 As any kind of user on the system
 I can visit the items catalog ("/items")
@@ -555,7 +555,7 @@ Each item's name and thumbnail image are links to that item's show page
 ```
 
 ```
-41. [ ] done
+41. [x] done
 
 As any kind of user on the system
 When I visit an item's show page from the items catalog
@@ -574,7 +574,7 @@ I also see a link to add this item to my cart
 ### "Cart" CRUD
 
 ```
-42. [ ] done
+42. [x] done
 
 As any kind of user on the system
 When I visit an item's show page from the items catalog
@@ -584,7 +584,7 @@ The navigation bar increments my cart counter
 ```
 
 ```
-43. [ ] done
+43. [x] done
 
 As any kind of user on the system
 When I visit my cart ("/cart")
@@ -601,7 +601,7 @@ I also see a grand total of what everything in my cart will cost
 ```
 
 ```
-44. [ ] done
+44. [x] done
 
 As any kind of user on the system
 When I visit my cart ("/cart")
@@ -612,7 +612,7 @@ The navigation bar shows 0 items in my cart
 ```
 
 ```
-45. [ ] done
+45. [x] done
 
 As any kind of user on the system
 When I visit my cart
@@ -626,7 +626,7 @@ I see a button or link to decrement the count of items I want to purchase
 ```
 
 ```
-46. [ ] done
+46. [x] done
 
 As a visitor
 When I visit my cart
@@ -636,7 +636,7 @@ The words "log in" is a link to the login page
 ```
 
 ```
-47. [ ] done
+47. [x] done
 
 As a registered user, merchant, or admin
 When I visit my cart
@@ -646,7 +646,7 @@ I see a button or link indicating that I can check out
 ### "Order" CRUD
 
 ```
-48. [ ] done
+48. [x] done
 
 As a registered user, merchant, or admin
 When I visit my cart
@@ -785,7 +785,7 @@ I see an area with statistics:
 ### Security
 
 ```
-58. [ ] done
+58. [x] done
 
 As an admin user
 I should have basic CRUD functionality for all content

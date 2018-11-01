@@ -71,9 +71,6 @@ RSpec.describe 'user can see orders' do
         expect(current_path).to eq(profile_orders_path)
         expect(page).to have_content("#{order_1.id}")
 
-
-
-
     end
   end
 end
